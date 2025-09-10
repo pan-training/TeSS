@@ -12,7 +12,7 @@ require 'uri'
 class OAIRDF < OAI::Provider::Metadata::Format
   def initialize
     @prefix = 'rdf'
-    @schema = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+    @schema = 'http://www.openarchives.org/OAI/2.0/rdf.xsd'
     @namespace = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
     @element_namespace = 'rdf'
   end
@@ -33,7 +33,7 @@ class TrainingProvider < OAI::Provider::Base
   record_prefix "oai:#{URI(TeSS::Config.base_url).host}"
   admin_email TeSS::Config.contact_email
   source_model OAI::Provider::ActiveRecordWrapper.new(PublicMaterial)
-  sample_id '13900' # record prefix used, so id becomes oai:domain:13900
+  sample_id '142' # so that example id is oai:domain:142
 
   register_format(OAIRDF.instance)
 end
