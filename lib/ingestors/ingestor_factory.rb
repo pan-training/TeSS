@@ -11,7 +11,12 @@ module Ingestors
         Ingestors::MaterialCsvIngestor,
         Ingestors::TessEventIngestor,
         Ingestors::ZenodoIngestor,
+<<<<<<< HEAD
         Ingestors::GithubIngestor,
+=======
+        Ingestors::OaiPmhIngestor,
+        Ingestors::OaiPmhBioschemasIngestor
+>>>>>>> 078a74ac (Add OAI-PMH Ingestors)
       ] + taxila_ingestors + llm_ingestors
     end
 
@@ -37,9 +42,13 @@ module Ingestors
         Ingestors::Taxila::OsciIngestor,
         Ingestors::Taxila::DccIngestor,
         Ingestors::Taxila::SenseIngestor,
+<<<<<<< HEAD
         Ingestors::Taxila::VuMaterialIngestor,
         Ingestors::Taxila::RdnlIngestor,
         Ingestors::Taxila::HanIngestor
+=======
+        Ingestors::Taxila::VuMaterialIngestor
+>>>>>>> 078a74ac (Add OAI-PMH Ingestors)
       ]
     end
 
