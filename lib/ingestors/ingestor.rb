@@ -151,7 +151,7 @@ module Ingestors
         # check for matched events
         resource.user_id ||= user.id
         resource.content_provider_id ||= provider.id
-        space_id extract_space_id(provider.description)
+        space_id = extract_space_id(provider.description)
         resource.space_id = space_id if space_id
         existing_resource = find_existing(type, resource)
 
