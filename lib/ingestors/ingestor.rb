@@ -34,9 +34,9 @@ module Ingestors
     end
 
     def write(user, provider, source: nil)
-      write_resources(Event, @events, user, provider, source: source)
+      write_resources(Event, @events, user, provider, source:)
       @messages << stats_summary(:events)
-      write_resources(Material, @materials, user, provider, source: source)
+      write_resources(Material, @materials, user, provider, source:)
       @messages << stats_summary(:materials)
     end
 
@@ -127,6 +127,22 @@ module Ingestors
       resource
     end
 
+    def extract_space_id(description)
+      description
+        .to_s
+        .lines
+        .each do |line|
+          if line.start_with?('space_id: ')
+            value = line.sub('space_id: ', '').strip
+            return Integer(value)
+          end
+        end
+
+      nil # nothing found
+    rescue ArgumentError
+      nil # found, but not a valid integer
+    end
+
     def write_resources(type, resources, user, provider, source: nil)
       resources.each_with_index do |resource, i|
         key = type.model_name.collection.to_sym
@@ -135,6 +151,8 @@ module Ingestors
         # check for matched events
         resource.user_id ||= user.id
         resource.content_provider_id ||= provider.id
+        space_id extract_space_id(provider.description)
+        resource.space_id = space_id if space_id
         existing_resource = find_existing(type, resource)
 
         update = existing_resource
@@ -144,9 +162,7 @@ module Ingestors
                      type.new(resource.to_h)
                    end
 
-        if resource.has_attribute?(:language) && resource.new_record?
-          resource.language ||= source&.default_language
-        end
+        resource.language ||= source&.default_language if resource.has_attribute?(:language) && resource.new_record?
 
         resource = set_resource_defaults(resource)
         if resource.valid?
