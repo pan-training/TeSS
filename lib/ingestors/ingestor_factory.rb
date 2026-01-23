@@ -12,8 +12,7 @@ module Ingestors
         Ingestors::TessEventIngestor,
         Ingestors::ZenodoIngestor,
         Ingestors::GithubIngestor,
-        Ingestors::OaiPmhIngestor,
-        Ingestors::OaiPmhBioschemasIngestor
+        Ingestors::OaiPmhIngestor
       ] + taxila_ingestors + llm_ingestors
     end
 
