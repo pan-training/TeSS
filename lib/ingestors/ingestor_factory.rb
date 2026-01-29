@@ -11,8 +11,8 @@ module Ingestors
         Ingestors::MaterialCsvIngestor,
         Ingestors::TessEventIngestor,
         Ingestors::ZenodoIngestor,
+        Ingestors::OaiPmhIngestor,
         Ingestors::GithubIngestor,
-        Ingestors::OaiPmhIngestor
       ] + taxila_ingestors + llm_ingestors
     end
 
