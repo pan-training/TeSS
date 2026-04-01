@@ -67,6 +67,9 @@ module Ingestors
       rights = xml_doc.xpath('//dc:rights', ns).map { |n| n.text&.strip }.reject(&:empty?)
       material.licence = rights.find { |r| r.start_with?('http://', 'https://') } || rights.first || 'notspecified'
 
+      rights = xml_doc.xpath('//dc:rights', ns).map { |n| n.text&.strip }.reject(&:empty?)
+      material.licence = rights.find { |r| r.start_with?('http://', 'https://') } || rights.first || 'notspecified'
+
       dates = xml_doc.xpath('//dc:date', ns).map(&:text)
       parsed_dates = dates.map do |d|
         Date.parse(d)

@@ -19,6 +19,7 @@
   <%= display_attribute(resource, :date_created) %>
   <%= display_attribute(resource, :date_modified) %>
   <%= display_attribute(resource, :date_published) %>
+  <div class="font-size-lg"><%= display_difficulty_level(resource) %></div>
 <% end -%>
 
 <% if resource.is_a?(Event) %>

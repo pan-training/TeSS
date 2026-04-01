@@ -138,7 +138,8 @@ namespace :tess do
     scraper.run
     log = scraper.log_file
     log.close
-    puts "Finished successfully, output written to: #{log.path}"
+    # puts "Finished successfully, output written to: #{log.path}"
+    puts 'Finished successfully'
   end
 
   desc 'run LLM post processing'
