@@ -52,6 +52,17 @@ module SearchHelper
   def remove_filter_link(name, value, html_options = {}, &block)
     parameters = search_and_facet_params
 
+    # for testing of crawler behavior remove scientific topics entirely so that they are not reachable through back links
+    if parameters.include?('scientific_topics')
+      if parameters['scientific_topics'].is_a?(Array)
+        (parameters['scientific_topics']).each do |key|
+          parameters['scientific_topics'].delete(key)
+        end
+      else
+        parameters.delete('scientific_topics')
+      end
+    end
+
     # delete a filter from an array or delete the whole facet if it is the only one
     if parameters.include?(name)
       if parameters[name].is_a?(Array)
