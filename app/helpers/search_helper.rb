@@ -17,16 +17,7 @@ module SearchHelper
   end
 
   def filter_link(name, value, count, html_options = {}, &block)
-    parameters = search_and_facet_params
-
-    #if there's already a filter of the same facet type, create/add to an array
-    if parameters.include?(name) && !html_options.delete(:replace)
-      parameters[name] = Array.wrap(parameters[name]) | [value]
-    else
-      parameters[name] = value
-    end
-
-    parameters.delete('page') #remove the page option if it exists
+    parameters = build_filter_parameters(name, value, html_options)
     html_options.reverse_merge!(title: value.to_s)
 
     link_to parameters, html_options do
@@ -36,6 +27,26 @@ module SearchHelper
         content_tag(:span, facet_title(name, value, html_options), class: 'facet-label') +
           content_tag(:span, "#{count}", class: 'facet-count')
       end
+    end
+  end
+
+  def filter_form(name, value, count, html_options = {}, &block)
+    parameters = build_filter_parameters(name, value, html_options)
+    button_options = html_options.dup
+    button_options[:class] = [button_options[:class], 'facet-option-button'].compact.join(' ')
+    button_options.reverse_merge!(title: value.to_s, type: 'submit')
+
+    form_tag(polymorphic_path(@model), method: :get, enforce_utf8: false, class: 'facet-option-form') do
+      safe_join(facet_param_hidden_fields(parameters) + [
+        button_tag(button_options) do
+          if block_given?
+            block.call
+          else
+            content_tag(:span, facet_title(name, value, button_options), class: 'facet-label') +
+              content_tag(:span, count.to_s, class: 'facet-count')
+          end
+        end
+      ])
     end
   end
 
@@ -74,5 +85,33 @@ module SearchHelper
             Show fewer #{facet.humanize.pluralize.downcase}</span>
             <i class='glyphicon glyphicon-chevron-up pull-right toggle-#{facet}' style='display: none;'></i>
             ".html_safe
+  end
+
+  private
+
+  def build_filter_parameters(name, value, html_options = {})
+    parameters = search_and_facet_params.to_h
+    key = name.to_s
+
+    # if there's already a filter of the same facet type, create/add to an array
+    if parameters.include?(key) && !html_options.delete(:replace)
+      parameters[key] = Array.wrap(parameters[key]) | [value]
+    else
+      parameters[key] = value
+    end
+
+    parameters.delete('page') # remove the page option if it exists
+    parameters.delete(:page)
+    parameters
+  end
+
+  def facet_param_hidden_fields(parameters)
+    parameters.flat_map do |key, value|
+      if value.is_a?(Array)
+        value.map { |item| hidden_field_tag("#{key}[]", item) }
+      else
+        [hidden_field_tag(key, value)]
+      end
+    end
   end
 end

@@ -356,6 +356,19 @@ ul.unstyled {
   }
 }
 
+.facet-option-form {
+  margin: 0;
+}
+
+.facet-option-button {
+  width: 100%;
+  padding: 7px 20px 7px 20px;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+}
+
 .active-filters {
   .remove-facet-icon {
     margin-left: 5px;
