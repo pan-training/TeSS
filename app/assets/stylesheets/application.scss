@@ -373,6 +373,12 @@ ul.unstyled {
     padding-left: 5px;
     margin-left: auto;
   }
+
+  .value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .active-filters {
