@@ -7,6 +7,7 @@
 <%# Display all filter links %>
 <% if @facet_params.include?(facet_field)  %>
   <li class="toggle-wrap mb-2 nav-item">
+    <input type="hidden" name="<%= facet_field %>" value="true">
     <%= remove_filter_link(facet_field, 'true') do %>
       <label class="toggle">
         <input type="checkbox" checked>
