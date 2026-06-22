@@ -54,6 +54,7 @@ module SearchHelper
     end
 
     parameters.delete('page') #remove the page option if it exists
+    parameters = {}
     html_options.reverse_merge!(title: value.to_s)
 
     link_to parameters, html_options do
