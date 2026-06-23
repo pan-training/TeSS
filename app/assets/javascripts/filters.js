@@ -16,9 +16,13 @@ document.addEventListener("turbolinks:load", function() {
         }
     });
 
-    $(document).on("click", ".boolean-facet-button", function (e) {
+    $(document).on("click", ".boolean-facet-button", function (e) {  // todo this is strange with "document"
         var $checkbox = $(this).find("input[type='checkbox']");
         $checkbox.prop("checked", !($checkbox.prop("checked")));
+    });
+
+    $('.facet-option-button-selected').on("click", function (e) {
+        $(this).closest('.facet-option-button-selected-container').find('input').prop("disabled", true);
     });
 });
 
