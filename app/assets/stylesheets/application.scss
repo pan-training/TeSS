@@ -381,6 +381,25 @@ ul.unstyled {
   }
 }
 
+.facet-option-button-selected {
+  border: none;
+  background-color: #eee;
+  color: #047EAA;
+  padding: 7px 20px 7px 20px;
+  width: 100%;
+  transition: 300ms;
+
+  .glyphicon-remove {
+    margin-left: auto;
+  }
+
+  .value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .boolean-facet-button {
   border: none;
   background: none;
