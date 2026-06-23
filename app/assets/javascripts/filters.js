@@ -16,6 +16,10 @@ document.addEventListener("turbolinks:load", function() {
         }
     });
 
+    $(document).on("click", ".boolean-facet-button", function (e) {
+        var $checkbox = $(this).find("input[type='checkbox']");
+        $checkbox.prop("checked", !($checkbox.prop("checked")));
+    });
 });
 
 function updateShowMore($el) {

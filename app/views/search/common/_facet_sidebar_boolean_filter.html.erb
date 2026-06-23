@@ -7,23 +7,22 @@
 <%# Display all filter links %>
 <% if @facet_params.include?(facet_field)  %>
   <li class="toggle-wrap mb-2 nav-item">
-    <input type="hidden" name="<%= facet_field %>" value="true">
-    <%= remove_filter_link(facet_field, 'true') do %>
+    <button type="submit" class="boolean-facet-button">
       <label class="toggle">
-        <input type="checkbox" checked>
+        <input type="checkbox" checked name="<%= facet_field %>" value="true">
         <span class="slider round"></span>
       </label>
-      <%= disable_text %>
-    <% end %>
+      <span class="boolean-facet-label"><%= disable_text %></span>
+    </button>
   </li>
 <% else %>
   <li class="toggle-wrap mb-2 nav-item">
-    <%= filter_link(facet_field, 'true', count) do %>
+    <button type="submit" class="boolean-facet-button">
       <label class="toggle">
-        <input type="checkbox">
+        <input type="checkbox" name="<%= facet_field %>" value="true">
         <span class="slider round"></span>
       </label>
-      <%= enable_text %>
-    <% end %>
+      <span class="boolean-facet-label"><%= enable_text %></span>
+    </button>
   </li>
 <% end %>
