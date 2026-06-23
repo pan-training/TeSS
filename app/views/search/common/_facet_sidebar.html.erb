@@ -22,7 +22,7 @@ Variable that should be available
            else
              [[t('sidebar.sort.values.most_recent'), 'new']]
            end %>
-<form>
+<%= form_with url: clear_filters_path, method: :get, id: 'sidebar-form' do %>
 <%= render partial: 'search/common/sort_by', locals: { resources: resource_type, extras: extras } %>
 
 <ul class="unstyled nav-simple">
@@ -111,4 +111,4 @@ Variable that should be available
 <% if current_user && (current_user.is_curator? || current_user.is_admin?) %>
   <%= render partial: 'search/common/facet_sidebar_curation', locals: { resource_type: resource_type } %>
 <% end %>
-</form>
+<% end %>

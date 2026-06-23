@@ -380,6 +380,23 @@ ul.unstyled {
   }
 }
 
+.boolean-facet-button {
+  border: none;
+  background: none;
+  transition: 300ms;
+  display: grid;
+  grid-template-columns: min-content auto;
+  margin-left: 9px;
+
+  &:hover .slider {
+    background-color: #047EAA;
+  }
+
+  .boolean-facet-label {
+    text-align: left;
+  }
+}
+
 .active-filters {
   .remove-facet-icon {
     margin-left: 5px;
