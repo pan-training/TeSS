@@ -277,9 +277,11 @@ ul.unstyled {
   @include unstyled-ul;
 }
 
-.nav-simple {
+.nav-simple,
+.nav-simple ul {
   margin: 0;
   list-style: outside none none;
+  padding-left: 0;
   padding-bottom: 0;
 }
 

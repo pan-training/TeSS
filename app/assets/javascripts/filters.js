@@ -1,22 +1,19 @@
 const N_FILTERS = 5;
 
 document.addEventListener("turbolinks:load", function() {
-    $('.filter-heading').click(function(e) {
-        var $el = $(this)
-        if ($el.hasClass('filter-heading-active')) {
-            collapseFilterCategory($el.parent().parent(), 200);
-        } else {
-            expandFilterCategory($el.parent().parent(), 200);
-        }
+    $('.facet-details').on('toggle', function() {
+        syncFilterCategory($(this).closest('.sidebar-group'), 200);
     });
 
-    $('.sidebar-group .nav-item').each(function() {
-        if ($(this).hasClass("active")) {
-            expandFilterCategory($(this).parent());
-        }
+    $('.sidebar-group').each(function() {
+        let $group = $(this);
+        let $details = $group.find('.facet-details').first();
+
+        $details.prop('open', $group.find('.nav-item.active').length > 0);
+        syncFilterCategory($group);
     });
 
-    $(document).on("click", ".boolean-facet-button", function (e) {  // todo this is strange with "document"
+    $('.boolean-facet-button').on("click", function () {
         var $checkbox = $(this).find("input[type='checkbox']");
         $checkbox.prop("checked", !($checkbox.prop("checked")));
     });
@@ -25,6 +22,14 @@ document.addEventListener("turbolinks:load", function() {
         $(this).closest('.facet-option-button-selected-container').find('input').prop("disabled", true);
     });
 });
+
+function syncFilterCategory($el, timing = 0) {
+    if ($el.find('.facet-details').prop('open')) {
+        expandFilterCategory($el, timing);
+    } else {
+        collapseFilterCategory($el, timing);
+    }
+}
 
 function updateShowMore($el) {
     $el.find('.expand-filters > a').off('click');

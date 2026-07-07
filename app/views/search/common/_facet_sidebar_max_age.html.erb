@@ -1,24 +1,24 @@
 <li class="sidebar-group mt-4">
-  <ul>
-    <li>
-      <div class="nav-heading filter-heading">
-        <span class="icon icon-lg events-icon"></span>
-        <span><%= t('facets.titles.date_added') %></span>
-        <div class="pull-right filter-expand"><i class="icon icon-md expand-icon"></i></div>
-      </div>
-    </li>
+  <details class="facet-details">
+    <summary class="nav-heading filter-heading">
+      <span class="icon icon-lg events-icon"></span>
+      <span><%= t('facets.titles.date_added') %></span>
+      <span class="pull-right filter-expand"><i class="icon icon-md expand-icon"></i></span>
+    </summary>
 
-    <% Subscription::FREQUENCY.each do |freq| %>
-      <% text = "In the last #{freq[:title]}" %>
-      <% if freq[:title] == params[:max_age] %>
-        <li class="nav-item active" style="display: none;">
-          <%= remove_filter_link(:max_age, freq[:title], title: text, replace: true, class: 'facet-option') %>
-        </li>
-      <% else %>
-        <li class="nav-item" style="display: none;">
-          <%= filter_link(:max_age, freq[:title], '', title: text, replace: true, class: 'facet-option') %>
-        </li>
+    <ul>
+      <% Subscription::FREQUENCY.each do |freq| %>
+        <% text = "In the last #{freq[:title]}" %>
+        <% if freq[:title] == params[:max_age] %>
+          <li class="nav-item active" style="display: none;">
+            <%= remove_filter_link(:max_age, freq[:title], title: text, replace: true, class: 'facet-option') %>
+          </li>
+        <% else %>
+          <li class="nav-item" style="display: none;">
+            <%= filter_link(:max_age, freq[:title], '', title: text, replace: true, class: 'facet-option') %>
+          </li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </details>
 </li>
