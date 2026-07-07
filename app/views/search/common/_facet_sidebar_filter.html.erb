@@ -5,41 +5,39 @@
 
 <% if facet_rows.any? %>
   <li class="sidebar-group mt-4">
-    <ul>
-      <%# Title %>
-      <li>
-        <div class="nav-heading filter-heading"><span class="icon icon-md filter-icon"></span>
+    <details class="facet-details">
+      <summary class="nav-heading filter-heading"><span class="icon icon-md filter-icon"></span>
 
-          <span>
-            <%= t("facets.titles.#{facet_field}", default: facet_field.humanize.singularize) %>
-          </span>
+        <span>
+          <%= t("facets.titles.#{facet_field}", default: facet_field.humanize.singularize) %>
+        </span>
 
-          <div class="pull-right filter-expand"><i class="icon icon-md expand-icon"></i></div>
-        </div>
-      </li>
+        <span class="pull-right filter-expand"><i class="icon icon-md expand-icon"></i></span>
+      </summary>
 
+      <ul>
+        <%# Display all filter links - active first %>
+        <% active_facet_rows.each do |facet| %>
+          <li class="nav-item active facet-option-button-selected-container" style="display: none;">
+            <input type="hidden" name="<%= facet_field %>[]" value="<%= facet.value.to_s %>">
+            <button type="submit" class="facet-option facet-option-button-selected" title="<%= facet.value.to_s %>"> 
+              <span class="value"><%= facet.value.to_s %></span>
+              <i class="remove-facet-icon glyphicon glyphicon-remove"></i>
+            </button>
+          </li>
+        <% end %>
+        <% other_facet_rows.each do |facet| %>
+          <li class="nav-item" style="display: none;">
+            <button type="submit" name="<%= facet_field %>[]" value="<%= facet.value.to_s %>" class="facet-option facet-option-button">
+              <span class="value"><%= facet.value.to_s %></span> <span class="count"><%= facet.count %></span>
+            </button>
+          </li>
+        <% end %>
 
-      <%# Display all filter links - active first %>
-      <% active_facet_rows.each do |facet| %>
-        <li class="nav-item active facet-option-button-selected-container" style="display: none;">
-          <input type="hidden" name="<%= facet_field %>[]" value="<%= facet.value.to_s %>">
-          <button type="submit" class="facet-option facet-option-button-selected" title="<%= facet.value.to_s %>"> 
-            <span class="value"><%= facet.value.to_s %></span>
-            <i class="remove-facet-icon glyphicon glyphicon-remove"></i>
-          </button>
+        <li class="expand-filters" style="display:none;">
+          <a href="#">Show N_FILTERS more</a>
         </li>
-      <% end %>
-      <% other_facet_rows.each do |facet| %>
-        <li class="nav-item" style="display: none;">
-          <button type="submit" name="<%= facet_field %>[]" value="<%= facet.value.to_s %>" class="facet-option facet-option-button">
-            <span class="value"><%= facet.value.to_s %></span> <span class="count"><%= facet.count %></span>
-          </button>
-        </li>
-      <% end %>
-
-      <li class="expand-filters" style="display:none;">
-        <a href="#">Show N_FILTERS more</a>
-      </li>
-    </ul>
+      </ul>
+    </details>
   </li>
 <% end %>

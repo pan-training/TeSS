@@ -11,30 +11,30 @@
 
     <% if show_last_scraped_filter %>
       <li class="sidebar-group mt-4">
-        <ul>
-          <li>
-            <div class="nav-heading filter-heading">
-              <span class="icon icon-lg events-icon"></span>
-              <span><%= t('sidebar.curate.values.last_checked') %></span>
-              <div class="pull-right filter-expand"><i class="icon icon-md expand-icon"></i></div>
-            </div>
-          </li>
-          <% [[1, t('sidebar.curate.values.one_day')],
-              [3, t('sidebar.curate.values.three_days')],
-              [7, t('sidebar.curate.values.one_week')],
-              [30, t('sidebar.curate.values.one_month')]].each do |days, text| %>
-            <% text = t('sidebar.curate.values.more_than', value: text) %>
-            <% if days == params[:days_since_scrape].to_i %>
-            <li class="nav-item active" style="display: none;">
-              <%= remove_filter_link(:days_since_scrape, days, title: text, replace: true, class: 'facet-option') %>
-            </li>
-          <% else %>
-            <li class="nav-item" style="display: none;">
-              <%= filter_link(:days_since_scrape, days, '', title: text, replace: true, class: 'facet-option') %>
-            </li>
+        <details class="facet-details">
+          <summary class="nav-heading filter-heading">
+            <span class="icon icon-lg events-icon"></span>
+            <span><%= t('sidebar.curate.values.last_checked') %></span>
+            <span class="pull-right filter-expand"><i class="icon icon-md expand-icon"></i></span>
+          </summary>
+          <ul>
+            <% [[1, t('sidebar.curate.values.one_day')],
+                [3, t('sidebar.curate.values.three_days')],
+                [7, t('sidebar.curate.values.one_week')],
+                [30, t('sidebar.curate.values.one_month')]].each do |days, text| %>
+              <% text = t('sidebar.curate.values.more_than', value: text) %>
+              <% if days == params[:days_since_scrape].to_i %>
+              <li class="nav-item active" style="display: none;">
+                <%= remove_filter_link(:days_since_scrape, days, title: text, replace: true, class: 'facet-option') %>
+              </li>
+            <% else %>
+              <li class="nav-item" style="display: none;">
+                <%= filter_link(:days_since_scrape, days, '', title: text, replace: true, class: 'facet-option') %>
+              </li>
+            <% end %>
           <% end %>
-        <% end %>
-        </ul>
+          </ul>
+        </details>
       </li>
     <% end %>
 
