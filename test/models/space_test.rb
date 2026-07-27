@@ -174,4 +174,74 @@ class SpaceTest < ActiveSupport::TestCase
     refute @space.is_subdomain?
     assert Space.new(host: 'test.example.com').is_subdomain?
   end
+
+  test 'with_current_space' do
+    astro = spaces(:astro)
+    Space.current_space = astro
+    assert_equal astro, Space.current_space
+
+    # Sets space and reverts after
+    plants = spaces(:plants)
+    Space.with_current_space(plants) do
+      assert_equal plants, Space.current_space
+    end
+    assert_equal astro, Space.current_space
+
+    # Resets after exception
+    assert_raises(RuntimeError) do
+      Space.with_current_space(plants) do
+        raise 'oh no'
+      end
+    end
+    assert_equal astro, Space.current_space
+
+    # Handles nil and default spaces
+    Space.with_current_space(nil) do
+      assert Space.current_space.default?
+    end
+
+    Space.with_current_space(Space.default) do
+      assert Space.current_space.default?
+    end
+  end
+
+  test 'space url uses same protocol as instance' do
+    TeSS::Config.instance_variable_set(:@base_uri, nil) # Clear memoized value
+    with_settings(base_url: 'http://www.example.com') do
+      assert_equal 'http://plants.mytess.training', @space.url
+    end
+
+    TeSS::Config.instance_variable_set(:@base_uri, nil)
+    with_settings(base_url: 'https://www.example.com') do
+      assert_equal 'https://plants.mytess.training', @space.url
+    end
+  end
+
+  test 'get default space' do
+    with_settings(feature: { spaces: false }) do
+      assert Space.default.is_a?(GlobalSpace)
+    end
+
+    with_settings(feature: { spaces: true }) do
+      assert Space.default.is_a?(DefaultSpace)
+    end
+  end
+
+  test 'resources scoped to space' do
+    plant_materials = spaces(:plants).materials.all.to_a
+    assert_includes plant_materials, materials(:plant_space_material)
+    assert_not_includes plant_materials, materials(:good_material)
+
+    astro_materials = spaces(:astro).materials.all.to_a
+    assert_not_includes astro_materials, materials(:plant_space_material)
+    assert_not_includes astro_materials, materials(:good_material)
+
+    default_materials = DefaultSpace.new.materials.all.to_a
+    assert_not_includes default_materials, materials(:plant_space_material)
+    assert_includes default_materials, materials(:good_material)
+
+    all_materials = GlobalSpace.new.materials.all.to_a
+    assert_includes all_materials, materials(:plant_space_material)
+    assert_includes all_materials, materials(:good_material)
+  end
 end

@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
@@ -79,8 +79,7 @@ const Index = {
 
 // Perform an ajax request to load the calendar and replace the contents
 window.loadCalendar = function(url) {
-    req = $.ajax(url);
-    req.done((res) => eval(res));
+    $.ajax(url, { dataType: 'script', cache: true }); // Is loaded automatically.
     return true;
 }
 
@@ -201,6 +200,9 @@ document.addEventListener("turbolinks:load", function(e) {
     // Testing section on source page
     Sources.init();
 
+    // Approve/reject user curation buttons
+    Curation.init();
+
     var setStarButtonState = function (button) {
         if (button.data('starred')) {
             button.html("<i class='icon icon-h3 star-fill-icon'> </i>");
@@ -289,7 +291,7 @@ document.addEventListener("turbolinks:load", function(e) {
                 return true;
             }
             this.dataset.origHeight = this.clientHeight;
-            this.style.maxHeight = '' + limit + 'px';
+            this.style.maxHeight = '' + (limit - 50) + 'px';
             this.classList.add('tess-expandable-closed');
             const btn = $('<a href="#" class="tess-expandable-btn">Show more</a>');
             btn.insertAfter($(this));
@@ -376,13 +378,14 @@ $(document).on('click', '.tess-expandable-btn', function (event) {
         return false;
     }
 
-    const maxHeight = parseInt(div.dataset.origHeight) + 80;
+    const maxHeight = parseInt(div.dataset.origHeight) + 120;
     const limit = parseInt(div.dataset.heightLimit || "300");
 
     if (div.classList.contains('tess-expandable-closed')) {
         div.classList.add('tess-expandable-open');
         div.classList.remove('tess-expandable-closed');
         div.style.maxHeight = '' + maxHeight + 'px';
+        setTimeout(() => div.style.maxHeight = null, 500);
         this.innerHTML = 'Show less';
     } else {
         div.classList.remove('tess-expandable-open');

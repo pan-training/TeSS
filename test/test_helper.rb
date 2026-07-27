@@ -35,8 +35,11 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = 'test/vcr_cassettes'
   config.hook_into :webmock
+  config.ignore_localhost = true
   # config.allow_http_connections_when_no_cassette = true
 end
+
+Sidekiq.testing!(:fake)
 
 class ActiveSupport::TestCase
   include SchemaHelper
@@ -48,6 +51,7 @@ class ActiveSupport::TestCase
 
   teardown do
     User.current_user = nil
+    Space.current_space = nil
   end
 
   # WARNING: Do not be tempted to include Devise TestHelpers here (e.g. include Devise::TestHelpers)

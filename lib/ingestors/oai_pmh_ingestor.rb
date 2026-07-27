@@ -2,6 +2,8 @@ require 'tess_rdf_extractors'
 
 module Ingestors
   class OaiPmhIngestor < Ingestor
+    include DublinCoreIngestion
+
     def self.config
       {
         key: 'oai_pmh',
@@ -36,20 +38,36 @@ module Ingestors
       }
     end
 
+    def extract_dublin_core_from_xml(xml_doc)
+      {
+        title: xml_doc.at_xpath('//dc:title', ns)&.text,
+        description: xml_doc.at_xpath('//dc:description', ns)&.text,
+        creators: xml_doc.xpath('//dc:creator', ns).map(&:text),
+        contributors: xml_doc.xpath('//dc:contributor', ns).map(&:text),
+        rights: xml_doc.xpath('//dc:rights', ns).map(&:text),
+        dates: xml_doc.xpath('//dc:date', ns).map(&:text),
+        identifiers: xml_doc.xpath('//dc:identifier', ns).map(&:text),
+        subjects: xml_doc.xpath('//dc:subject', ns).map(&:text),
+        types: xml_doc.xpath('//dc:type', ns).map(&:text),
+        publisher: xml_doc.at_xpath('//dc:publisher', ns)&.text
+      }
+    end
+
     def read_oai_dublin_core(client)
       count = 0
       client.list_records(metadata_prefix: 'oai_dc').full.each do |record|
         xml_string = record.metadata.to_s
         doc = Nokogiri::XML(xml_string)
+        dc = extract_dublin_core_from_xml(doc)
 
-        types = doc.xpath('//dc:type', ns).map(&:text)
+        types = normalize_dublin_core_values(dc[:types])
         # this event detection heuristic captures in particular
         # - http://purl.org/dc/dcmitype/Event (the standard way of typing an event in dublin core)
         # - https://schema.org/Event
         if types.any? { |t| t.downcase.include? 'event' }
-          read_dublin_core_event(doc)
+          add_event(build_event_from_dublin_core_data(dc))
         else
-          read_dublin_core_material(doc)
+          add_material(build_material_from_dublin_core_data(dc))
         end
 
         count += 1
@@ -136,11 +154,11 @@ module Ingestors
       end
 
       if totals.keys.any?
-        bioschemas_summary = "Bioschemas summary:\n"
+        bioschemas_summary = ["Bioschemas summary:\n"]
         totals.each do |type, count|
-          bioschemas_summary << "\n - #{type}: #{count}"
+          bioschemas_summary << " - #{type}: #{count}"
         end
-        @messages << bioschemas_summary
+        @messages << bioschemas_summary.join("\n")
       end
 
       @bioschemas_manager.deduplicate(provider_events).each do |event_params|

@@ -50,17 +50,20 @@ module MaterialsHelper
     TargetAudienceDictionary.instance.lookup_value(label, 'title') || label
   end
 
-  def display_difficulty_level(resource)
-    value = resource.send('difficulty_level')
+  def display_difficulty_level(value)
+    data = DifficultyDictionary.instance.lookup(value)
+    return nil if data.nil? || value == 'notspecified'
     if value == 'beginner'
-      '• ' + value
+      text = '• ' + data['title']
     elsif value == 'intermediate'
-      '•• ' + value
+      text = '•• ' + data['title']
     elsif value == 'advanced'
-      '••• ' + value
+      text = '••• ' + data['title']
     else
-      ''
+      text = data['title']
     end
+
+    content_tag(:span, text, title: data['description'])
   end
 
   def display_attribute(resource, attribute, show_label: true, title: nil, markdown: false, list: false, expandable: false)
@@ -81,31 +84,29 @@ module MaterialsHelper
                 html_escape(block_given? ? yield(value) : value)
               end
     end
-    string = "<p class=\"#{attribute}#{show_label ? ' no-spacing' : ''}\">"
-    unless value.blank? || value.try(:strip) == 'License Not Specified'
-      string << "<strong class='text-primary'> #{title || resource.class.human_attribute_name(attribute)}: </strong>" if show_label
-      if list
-        string << '<ul>'
-        value.each do |v|
-          string << "<li>#{v}</li>"
+    classes = [attribute]
+    classes << 'no-spacing' if show_label
+    content_tag(:p, class: classes) do
+      unless value.blank? || value.try(:strip) == 'License Not Specified'
+        concat content_tag(:strong, "#{title || resource.class.human_attribute_name(attribute)}: ", class: 'text-primary') if show_label
+        if list
+          concat content_tag(:ul) { safe_join(value.map { |v| content_tag(:li, v) }) }
+        elsif expandable
+          height_limit = expandable.is_a?(Numeric) ? expandable : nil
+          concat content_tag(:div, value.to_s, class: 'tess-expandable', 'data-height-limit': height_limit ? height_limit : nil)
+        else
+          concat value.to_s
         end
-        string << '</ul>'
-      elsif expandable
-        height_limit = expandable.is_a?(Numeric) ? expandable : nil
-        string << "<div class=\"tess-expandable\"#{" data-height-limit=\"#{height_limit}\"" if height_limit}>" + value.to_s + '</div>'
-      else
-        string << value.to_s
       end
     end
-    string << '</p>'
-    string.html_safe
   end
 
   def display_people(resource, attribute)
     display_attribute(resource, attribute) do |values|
       html = values.map do |person|
         if person.profile
-          link_to(person.profile.full_name, person.profile)
+          target = person.profile.is_a?(Trainer) ? person.profile : person.profile.user
+          link_to(person.profile.full_name, target)
         elsif person.orcid.present?
           image_tag('ORCID-iD_icon_vector.svg', size: 16) + ' ' +
           external_link(person.display_name, person.orcid_url)

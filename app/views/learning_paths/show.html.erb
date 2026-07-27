@@ -61,13 +61,19 @@
       </div>
 
       <div class="learning-path-topics">
-        <% @learning_path.topic_links.joins(:topic).each do |lpt| %>
-          <div class="learning-path-topic" id="topic-<%= lpt.id -%>">
+        <% topics = @learning_path.topic_links.joins(:topic) %>
+        <% topic_count = topics.count %>
+        <% topics.each do |lpt| %>
+          <% classes = ['learning-path-topic'] %>
+          <% classes << 'single-topic' if topic_count == 1 %>
+          <% classes << 'unordered' if @learning_path.unordered? %>
+          <%= content_tag(:div, id: "topic-#{lpt.id}", class: classes) do %>
             <div class="learning-path-topic-order"><%= lpt.order %></div>
             <div class="learning-path-topic-title">
               <h4><%= lpt.topic.title %> <i class="icon icon-md expand-icon"></i></h4>
-              <% if lpt.topic.difficulty_level.present? %>
-                <span class="label label-default"><%= display_difficulty_level(lpt.topic) %></span>
+              <% competency = display_difficulty_level(lpt.topic.difficulty_level) %>
+              <% if competency %>
+                <span class="label label-default"><%= competency %></span>
               <% end %>
               <span class="label label-default">
                 <i class="fa fa-book"></i> <%= pluralize(lpt.topic.material_items.count, 'material') %>
@@ -88,7 +94,7 @@
                 <% end %>
               </ul>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

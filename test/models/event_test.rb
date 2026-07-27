@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'sidekiq/testing'
 
 class EventTest < ActiveSupport::TestCase
   setup do
@@ -774,5 +773,94 @@ class EventTest < ActiveSupport::TestCase
     assert_equal 1, bioschemas[:provider].length
     assert_equal 'Goblet', bioschemas[:provider].first['name']
     assert_equal 'http://mygoblet.org', bioschemas[:provider].first['url']
+  end
+
+  test 'does not destroy and recreate ontology term links' do
+    e = events(:scraper_user_event)
+
+    # Via names
+    assert_difference('OntologyTermLink.count', 2) do
+      e.scientific_topic_names = %w[Proteins Chromosomes]
+      e.save!
+      assert_equal 2, e.scientific_topics.count
+    end
+
+    ontology_term_links = e.ontology_term_links.to_a
+
+    assert_no_difference('OntologyTermLink.count') do
+      e.scientific_topic_names = %w[Proteins Chromosomes]
+      e.save!
+      assert_equal 2, e.scientific_topics.count
+    end
+
+    assert_equal ontology_term_links, e.reload.ontology_term_links.to_a
+
+    assert_no_difference('OntologyTermLink.count') do
+      e.scientific_topic_names = %w[Proteins Biodiversity]
+      e.save!
+      assert_equal 2, e.scientific_topics.count
+    end
+
+    assert_equal 1, (e.reload.ontology_term_links.to_a - ontology_term_links).length
+  end
+
+  test 'should set contributors from array of hashes' do
+    @event.contributors = [
+      { name: 'John Doe', orcid: '0000-0002-1825-0097' },
+      { name: 'Jane Smith' }
+    ]
+    @event.save!
+    @event.reload
+
+    assert_equal 2, @event.contributors.size
+    john = @event.contributors.find { |c| c.name == 'John Doe' }
+    assert_not_nil john
+    assert_equal '0000-0002-1825-0097', john.orcid
+  end
+
+  test 'should set contributors from array of Person objects' do
+    person1 = Person.new(resource: @event, name: 'Alice Wonder')
+    person2 = Person.new(resource: @event, name: 'Bob Builder')
+
+
+    assert_not_includes @event.contributors.map(&:name), person1.name
+
+    @event.contributors = [person1, person2]
+    @event.save!
+    @event.reload
+
+    assert_equal 2, @event.contributors.size
+    assert_includes @event.contributors.map(&:name), person1.name
+    assert_includes @event.contributors.map(&:name), person2.name
+  end
+
+  test 'should set instructors from array of hashes' do
+    @event.instructors = [
+      { name: 'John Doe', orcid: '0000-0002-1825-0097' },
+      { name: 'Jane Smith' }
+    ]
+    @event.save!
+    @event.reload
+
+    assert_equal 2, @event.instructors.size
+    john = @event.instructors.find { |c| c.name == 'John Doe' }
+    assert_not_nil john
+    assert_equal '0000-0002-1825-0097', john.orcid
+  end
+
+  test 'should set instructors from array of Person objects' do
+    person1 = Person.new(resource: @event, name: 'Alice Wonder')
+    person2 = Person.new(resource: @event, name: 'Bob Builder')
+
+
+    assert_not_includes @event.instructors.map(&:name), person1.name
+
+    @event.instructors = [person1, person2]
+    @event.save!
+    @event.reload
+
+    assert_equal 2, @event.instructors.size
+    assert_includes @event.instructors.map(&:name), person1.name
+    assert_includes @event.instructors.map(&:name), person2.name
   end
 end

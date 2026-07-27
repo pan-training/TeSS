@@ -2,7 +2,6 @@
 
 require 'icalendar'
 require 'nokogiri'
-require 'open-uri'
 require 'tzinfo'
 
 module Ingestors
@@ -22,7 +21,6 @@ module Ingestors
       @token = Rails.application.config.secrets.indico_api_token
       @verbose = false
       sources = parse_sitemap(source_url)
-      return if sources.nil?
 
       sources.each do |url|
         process_url(url)

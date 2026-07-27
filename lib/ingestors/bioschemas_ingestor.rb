@@ -1,8 +1,9 @@
-require 'open-uri'
 require 'tess_rdf_extractors'
 
 module Ingestors
   class BioschemasIngestor < Ingestor
+    include Ingestors::Concerns::SitemapHelpers
+
     DUMMY_URL = 'https://example.com'
 
     attr_reader :verbose
@@ -16,32 +17,13 @@ module Ingestors
     end
 
     def read(source_url)
-      sitemap_regex = nil
       @verbose = false
-      sources = if source_url.downcase.match?(/sitemap(.*)?.xml\Z/)
-                  sitemap_message = "Parsing .xml sitemap: #{source_url}\n"
-                  urls = SitemapParser.new(source_url, {
-                    recurse: true,
-                    url_regex: sitemap_regex,
-                    headers: { 'User-Agent' => config[:user_agent] }
-                  }).to_a.uniq.map(&:strip)
-                  sitemap_message << "\n - #{urls.count} URLs found"
-                  @messages << sitemap_message
-                  urls
-                elsif source_url.downcase.match?(/sitemap(.*)?.txt\Z/)
-                  sitemap_message = "Parsing .txt sitemap: #{source_url}\n"
-                  urls = open_url(source_url).to_a.uniq.map(&:strip)
-                  sitemap_message << "\n - #{urls.count} URLs found"
-                  @messages << sitemap_message
-                  urls
-                else
-                  [source_url]
-                end
+      sources = parse_sitemap(source_url)
 
       provider_events = []
       provider_materials = []
       totals = Hash.new(0)
-      no_bioschema_urls = "Bioschemas not found in:\n"
+      no_bioschema_urls = []
       sources.each do |url|
         source = open_url(url)
         output = read_content(source, url: url)
@@ -51,19 +33,19 @@ module Ingestors
           output[:totals].each do |key, value|
             totals[key] += value
           end
-          no_bioschema_urls << "\n - #{url}" if !source.nil? && output[:totals].values.sum.zero?
+          no_bioschema_urls << url if !source.nil? && output[:totals].values.sum.zero?
         end
       end
 
       if totals.keys.any?
-        bioschemas_summary = "Bioschemas summary:\n"
+        bioschemas_summary = ["Bioschemas summary:\n"]
         totals.each do |type, count|
-          bioschemas_summary << "\n - #{type}: #{count}"
+          bioschemas_summary << " - #{type}: #{count}"
         end
-        @messages << bioschemas_summary
+        @messages << bioschemas_summary.join("\n")
       end
 
-      @messages << no_bioschema_urls
+      @messages << "Bioschemas not found in:\n\n#{no_bioschema_urls.map { |u| " - #{u}" }.join("\n")}" if no_bioschema_urls.any?
 
       deduplicate(provider_events).each do |event_params|
         add_event(event_params)
@@ -131,7 +113,7 @@ module Ingestors
           error = 'A parsing error'
           comment = 'Please check your page contains valid JSON-LD or HTML.'
         end
-        message = "#{error} occurred while reading"
+        message = String.new("#{error} occurred while reading")
         if url.present? && url != 'https://example.com'
           message << ": #{url} "
         else

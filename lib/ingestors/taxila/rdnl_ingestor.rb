@@ -1,4 +1,3 @@
-require 'open-uri'
 require 'csv'
 require 'nokogiri'
 
@@ -45,14 +44,17 @@ module Ingestors
           end
           event.start = event.start.change(year: event.end.year) if event.start < event.end - 1.year
           event.start = event.start.change(year: event.end.year - 1) if event.start > event.end
-          if event.start < Time.zone.now - 2.weeks
+          if event.end < Time.zone.now - 2.weeks
             event.start = event.start.change(year: Time.now.year + 1)
             event.end = event.end.change(year: Time.now.year + 1)
           end
-
           event.description = event_data.css('.card__excerpt > p')[0].text.strip
-
           event.venue = event_data.css('dl.meta-list > div > dd')[1].text.strip
+
+          sleep(1) unless Rails.env.test? and File.exist?('test/vcr_cassettes/ingestors/lcrdm.yml')
+          event_page2 = Nokogiri::HTML5.parse(open_url(event.url.to_s, raise: true)).css('.entry__inner')
+          event.cost_basis = 'charge' if event_page2.text.include?('€')
+
           event.source = 'RDNL'
           event.host_institutions = ['RDNL']
           event.timezone = 'Amsterdam'

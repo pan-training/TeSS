@@ -73,6 +73,14 @@ en:
         default_language: 'Default language'
       person:
         name: 'Name'
+      material:
+        difficulty_level: Competency level
+      learning_path:
+        difficulty_level: Competency level
+      learning_path_topic:
+        difficulty_level: Competency level
+      workflow:
+        difficulty_level: Competency level
   about:
     headings:
       events: Events
@@ -627,6 +635,9 @@ en:
       language: 'Select a language...'
     long: 'Long events'
     pick_date: 'Pick a range of dates for a better collection of events.'
+    show_past_events:
+      one: Show %{count} past event
+      other: Show %{count} past events
   materials:
     hints:
       authors: >
@@ -724,6 +735,7 @@ en:
       url: 'Preferred URL to direct people to your learning path landing page.'
       version: 'Indicate the current version of the learning path.'
       public: Un-ticking this box will hide this learning path from anyone who isn't the creator or a collaborator.
+      unordered: Ticking this box will hide the order numbering of topics when viewing the learning path.
     next_topic: Next topic
     next_item: Next
     end_of: End of learning path
@@ -840,8 +852,9 @@ en:
       user: Owner
       organizer: Organiser
     titles:
-      language: 'Language'
-      date_added: 'Date added'
+      language: Language
+      date_added: Date added
+      difficulty_level: Competency level
   languages: # Only needed to override default names from I18nData
     el: 'Greek'
   errors:
@@ -999,6 +1012,7 @@ en:
       via_email: 'Subscribe via email'
       add_to_calendar: 'Add to calendar'
       to_rss: 'Subscribe to RSS feed'
+      to_oai_pmh: 'Harvest using OAI-PMH'
       events_rss_feed: 'Events RSS feed'
       email_title: 'Email Subscription'
       submit_button: 'Subscribe'
@@ -1029,6 +1043,14 @@ en:
       instructions_paragraph2_html: >-
         Please note, it may take a while for newly created events in %{title} to synchronise with
         your Google Calendar.
+    oai_pmh:
+      instructions_header: 'Exchange content using OAI-PMH'
+      instructions_body_html: >-
+        Use an <a href="https://www.openarchives.org/pmh/" target="_blank" rel="noopener">OAI-PMH</a> compatible 
+        tool to harvest metadata using the OAI-PMH endpoint. In particular, this endpoint 
+        can be used for exchanging content between different TeSS instances. 
+        See the <a href="https://elixirtess.github.io/docs/" target="_blank" rel="noopener">TeSS documentation</a> 
+        for more details.
     unsubscribe:
       success: 'You have successfully unsubscribed.'
     frequency_options:
@@ -1138,3 +1160,32 @@ en:
     authentication_failure: 'Failed to authenticate your ORCID.'
   people:
     add: Add %{role}
+  curation:
+    users:
+      title: Curate Users
+      recent_activity:
+        title: Recent Curation Activity
+        empty: No recent approvals/rejections.
+      list:
+        empty: Could not find any %{role} requiring approval. Another curator may have already taken action.
+        registered_time: Registered %{time} ago
+        blank_attribute: None specified
+      activity:
+        approved: approved
+        rejected: rejected
+        info: by %{curator} %{time} ago
+      filters:
+        with_role:
+          title: Role
+          hint: Show users with the selected role.
+        with_content:
+          title: With content?
+          hint: Only show users who have created content.
+        max_age:
+          title: Registered
+          hint: Only show users who registered within the selected period.
+          options:
+            any: Any time
+            week: Within the last week
+            month: Within the last month
+            year: Within the last year

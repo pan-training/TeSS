@@ -9,15 +9,8 @@ module Ingestors
         c.send(:event_params)
         event = OpenStruct.new(c.send(:event_params))
       end
-      TeSS::Config.feature['auto_parse_vars'].each do |var|
-        new_val = auto_parse(var, event.description)
-        next if new_val.blank? 
-
-        current_val = event.send(var) if event.respond_to?(var)
-        if !event.respond_to?(var) || current_val.blank?
-          event.send("#{var}=", new_val)
-        end
-      end
+      event = handle_auto_parsing(event)
+      event = handle_controlled_vocabulary(event)
       @events << event unless event.nil?
     end
 
@@ -27,10 +20,6 @@ module Ingestors
 
     def convert_event_types(input)
       EventTypeDictionary.instance.lookup_value(input, 'title')
-    end
-
-    def convert_location(input)
-      input
     end
 
     def parse_dates(input, timezone = nil)

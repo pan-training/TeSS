@@ -17,6 +17,12 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @bioschemas = @events.flat_map(&:to_bioschemas)
+    @past_events_count = 0
+    if TeSS::Config.solr_enabled && @events.none? && @facet_params[:include_expired] != 'true' && request.format.html?
+      @past_events_count = Event.search_and_filter(current_user,
+                                                   @search_params,
+                                                   @facet_params.merge(include_expired: 'true'), sort_by: @sort_by).total
+    end
     respond_to do |format|
       format.html
       format.json
@@ -241,7 +247,7 @@ class EventsController < ApplicationController
                                   external_resources_attributes: %i[id url title _destroy],
                                   external_resources: %i[url title], material_ids: [],
                                   llm_interaction_attributes: %i[id scrape_or_process model prompt input output needs_processing _destroy],
-                                  locked_fields: [])
+                                  locked_fields: [], instructors: [:name, :orcid], contributors: [:name, :orcid])
   end
 
   def event_report_params

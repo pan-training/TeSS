@@ -45,6 +45,10 @@ Create TeSS configuration files:
     docker compose run app bundle install
     docker compose run app bundle exec rake db:setup
 
+### Setup yarn dependencies
+
+    docker compose run app yarn install
+
 ### Start services
 
     docker compose up -d
@@ -54,6 +58,14 @@ Create TeSS configuration files:
 TeSS is accessible at the following URL:
 
 <http://localhost:3000>
+
+### Access [Adminer](https://www.adminer.org/)
+
+An Adminer instance to connect to and visualize your local database is accessible at the following URL:
+
+<http://localhost:8080>
+
+Credentials are in the `.env` file. Use `db` as the server/host (choose PostgreSQL for "System").
 
 ### Testing
 

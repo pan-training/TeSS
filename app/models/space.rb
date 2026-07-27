@@ -11,6 +11,7 @@ class Space < ApplicationRecord
   has_many :collections, dependent: :nullify
   has_many :learning_paths, dependent: :nullify
   has_many :learning_path_topics, dependent: :nullify
+  has_many :subscriptions, dependent: :nullify
   has_many :space_roles, dependent: :destroy
   has_many :space_role_users, through: :space_roles, source: :user, class_name: 'User'
   has_many :administrator_roles, -> { where(key: :admin) }, class_name: 'SpaceRole'
@@ -33,8 +34,17 @@ class Space < ApplicationRecord
     Thread.current[:current_space] || Space.default
   end
 
+  def self.with_current_space(space)
+    old_space = current_space
+    old_space = nil if old_space.default?
+    self.current_space = space
+    yield
+  ensure
+    self.current_space = old_space
+  end
+
   def self.default
-    DefaultSpace.new
+    TeSS::Config.feature['spaces'] ? DefaultSpace.new : GlobalSpace.new
   end
 
   def logo_alt
@@ -42,7 +52,7 @@ class Space < ApplicationRecord
   end
 
   def url
-    "https://#{host}"
+    "#{TeSS::Config.base_uri.scheme}://#{host}"
   end
 
   def default?

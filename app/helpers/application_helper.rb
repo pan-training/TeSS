@@ -251,8 +251,8 @@ module ApplicationHelper
   end
 
   def info_button(title, opts = {}, &block)
-    classes = 'btn btn-default has-popover'
-    classes << " #{opts[:class]}" if opts[:class]
+    classes = %w(btn btn-default has-popover)
+    classes << opts[:class] if opts[:class]
     title_text = opts[:hide_text] ? '' : title
     content_tag(:a, tabindex: 0, class: classes,
                     data: { toggle: 'popover', placement: 'bottom',
@@ -300,7 +300,7 @@ module ApplicationHelper
         options['data-tab-history-update-url'] = true
       end
 
-      text << " (#{count})" if count
+      text += " (#{count})" if count
 
       link_to("##{href}", options) do
         content_tag(:i, nil, class: icon, 'aria-hidden': 'true') + ' ' + text
@@ -441,7 +441,7 @@ module ApplicationHelper
     else
       ''
       # end + "TeSS (Training eSupport System)"
-    end + TeSS::Config.site['title']
+    end + (Space.current_space.default? ? TeSS::Config.site['title'] : Space.current_space.title)
   end
 
   # Renders a title on the page (by default in an H2 tag, pass a "tag" option with a symbol to change) as well as

@@ -105,7 +105,15 @@
   <% end %>
 
   <!-- Field: Target Audience -->
-  <%= f.multi_input :target_audience, errors: @event.errors[:target_audience], title: t('events.hints.targets') %>
+  <% if TeSS::Config.feature['controlled_vocabulary_vars'].include? 'target_audience' %>
+    <%= f.dropdown :target_audience,
+                  options: TargetAudienceDictionary.instance.options_for_select,
+                  label: 'Target audiences',
+                  errors: @event.errors[:target_audience],
+                  title: t('events.hints.targets') %>
+  <% else %>
+    <%= f.multi_input :target_audience, errors: @event.errors[:target_audience], title: t('events.hints.targets') %>
+  <% end %>
 
   <!-- Field: Topics -->
   <% if !TeSS::Config.feature['disabled'].include? 'topics' %>
@@ -166,6 +174,12 @@
   <% if !TeSS::Config.feature['disabled'].include? 'sponsors' %>
     <%= f.multi_input :sponsors, errors: @event.errors[:sponsors], hint: t('events.hints.sponsors') %>
   <% end %>
+
+  <!-- Field: Contributors -->
+  <%= render partial: "common/people_form", locals: { f: f, field_name: 'contributors', role: 'contributor' } %>
+
+  <!-- Field: Instructors -->
+  <%= render partial: "common/people_form", locals: { f: f, field_name: 'instructors', role: 'instructor' } %>
 
   <div class="form-group">
     <%= f.submit(class: 'btn btn-primary') %>

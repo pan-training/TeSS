@@ -131,6 +131,52 @@ class IngestorTest < ActiveSupport::TestCase
         end
       end
     end
+
+    test "handle controlled vocabulary if #{enabled}" do
+      if enabled == 'enabled'
+        controlled_vocabulary = ['target_audience', 'keywords']
+      else
+        controlled_vocabulary = []
+      end
+      user = users(:scraper_user)
+      provider = content_providers(:portal_provider)
+      @source = Source.create!(url: 'https://somewhere.com/stuff', method: 'bioschemas',
+                              enabled: true, approval_status: 'approved',
+                              content_provider: provider, user: users(:admin))
+      ingestor = Ingestors::Ingestor.new
+      new_event = OpenStruct.new(url: 'https://some-course.net',
+                                  title: 'Yet another event',
+                                  start: '2021-01-31 13:00:00',
+                                  end:'2021-01-31 14:00:00',
+                                  description: 'professor, tool criticism and software citation in text',
+                                  target_audience: ['nonsense', 'students', 'github beginners'],
+                                  keywords: ['nonsense', 'data infrastructure', 'Policy development'])
+      new_material = OpenStruct.new(url: 'https://some-course.net',
+                                  title: 'Yet another course',
+                                  description: 'professor, tool criticism and software citation in text',
+                                  target_audience: ['nonsense', 'students', 'github beginners'],
+                                  keywords: ['nonsense', 'data infrastructure', 'Policy development'])
+      with_settings({ feature: { controlled_vocabulary_vars: controlled_vocabulary } }) do
+        ingestor.add_event(new_event)
+        ingestor.add_material(new_material)
+        assert_difference('provider.events.count', 1) do
+          assert_difference('provider.materials.count', 1) do
+            ingestor.write(user, provider, source: @source)
+          end
+        end
+      end
+      event = Event.find_by(title: 'Yet another event')
+      material = Material.find_by(title: 'Yet another course')
+      [event, material].each do |obj|
+        if enabled == 'enabled'
+          assert_equal(['students', 'other'].sort, obj.target_audience.sort)
+          assert_equal(['Data infrastructure', 'Policy and governance'].sort, obj.keywords.sort)
+        else
+          assert_equal(['nonsense', 'students', 'github beginners'], obj.target_audience)
+          assert_equal(['nonsense', 'data infrastructure', 'Policy development'], obj.keywords)
+        end
+      end
+    end
   end
 
   test 'does not set event language when language and source default language missing' do
@@ -270,30 +316,24 @@ class IngestorTest < ActiveSupport::TestCase
     assert_equal 'ok', result.read
   end
 
-  test 'open_url raises HTTPRedirect after too many retries' do
+  test 'open_url raises exception after too many redirects' do
     ingestor = DummyIngestor.new
-    fake_uri = URI('https://example.com/')
+    WebMock.stub_request(:any, 'https://redirect.loop/').to_return(status: 301,
+                                                                   headers: { 'Location' => 'https://redirect.loop/' })
 
-    URI.stub(:parse, fake_uri) do
-      fake_uri.define_singleton_method(:open) do |*_args|
-        raise OpenURI::HTTPRedirect.new('Redirect', 1, URI('https://redirected.com'))
-      end
-
-      assert_raises(OpenURI::HTTPRedirect) do
-        ingestor.open_url('https://example.com/')
-      end
+    assert_raises(OpenURI::HTTPRedirect) do
+      ingestor.open_url('https://redirect.loop/')
     end
   end
 
-  test 'open_url raises HTTPError' do
+  test 'open_url logs error status' do
     ingestor = DummyIngestor.new
-    stub_request(:get, 'https://bad.com')
-      .to_raise(OpenURI::HTTPError.new('404 not found', StringIO.new))
+    WebMock.stub_request(:any, 'https://bad.com/').to_return(status: 404)
 
     result = ingestor.open_url('https://bad.com')
     assert_nil result
     assert_includes ingestor.instance_variable_get(:@messages).last,
-                    "Couldn't open URL https://bad.com: 404 not found"
+                    "Couldn't open URL https://bad.com: 404"
   end
 
   test 'get_redirected_url follows meta refresh redirect' do
@@ -358,6 +398,80 @@ class IngestorTest < ActiveSupport::TestCase
     end
     event = Event.find_by(title: 'Some course')
     assert_equal space, event.space
+  end
+
+  test 'handles HTTP errors and SSRF attempts' do
+    WebMock.stub_request(:any, 'http://200host.com').to_return(status: 200, body: 'hi')
+    WebMock.stub_request(:any, 'http://404host.com').to_return(status: 404, body: 'hi')
+    WebMock.stub_request(:any, 'http://slowhost.com').to_timeout
+
+    ingestor = Ingestors::BioschemasIngestor.new
+
+    # 200
+    assert ingestor.open_url('http://200host.com')
+
+    # 404
+    assert_nil ingestor.open_url('http://404host.com')
+    assert_equal "Couldn't open URL http://404host.com: 404 ", ingestor.messages.last
+    assert_raises(OpenURI::HTTPError) do
+      ingestor.open_url('http://404host.com', raise: true)
+    end
+
+    # private address
+    begin
+      server = TCPServer.new(3005)
+      thread = Thread.start { server.accept }
+      with_net_connection do # Allow request through to be caught by private_address_check
+        assert_nil ingestor.open_url('http://localhost:3005')
+        assert_equal "Couldn't open URL http://localhost:3005", ingestor.messages.last
+        assert_raises(RuntimeError) do
+          ingestor.open_url('http://localhost:3005', raise: true)
+        end
+      end
+    ensure
+      thread.exit if thread
+    end
+
+    # timeout
+    assert_raises(Net::OpenTimeout) do
+      ingestor.open_url('http://slowhost.com') # Always raises
+    end
+  end
+
+  test 'does not log useless update activities' do
+    user = users(:scraper_user)
+    provider = content_providers(:goblet)
+    url = 'http://example.com/cool-course-summer'
+    e = events(:course_event)
+    e.update!(scraper_record: true)
+
+    assert provider.events.where(url: url).any?
+
+    event = OpenStruct.new(url: 'http://example.com/cool-course-summer', title: 'A different title')
+
+    ingestor = Ingestors::Ingestor.new
+    ingestor.instance_variable_set(:@events, [event])
+    assert_no_difference('provider.events.count') do
+      assert_no_difference('PublicActivity::Activity.where(key: "event.create").count') do
+        assert_difference('PublicActivity::Activity.where(key: "event.update").count', 1) do
+          assert_difference('PublicActivity::Activity.where(key: "event.update_parameter").count', 1) do # Title is changed
+            ingestor.write(user, provider)
+          end
+        end
+      end
+    end
+
+    ingestor = Ingestors::Ingestor.new
+    ingestor.instance_variable_set(:@events, [event])
+    assert_no_difference('provider.events.count') do
+      assert_no_difference('PublicActivity::Activity.where(key: "event.create").count') do
+        assert_no_difference('PublicActivity::Activity.where(key: "event.update").count') do
+          assert_no_difference('PublicActivity::Activity.where(key: "event.update_parameter").count') do
+            ingestor.write(user, provider) # Nothing changed so don't log
+          end
+        end
+      end
+    end
   end
 
 end
