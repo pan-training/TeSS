@@ -79,8 +79,8 @@ class Space < ApplicationRecord
     (FEATURES - disabled_features)
   end
 
-  def is_subdomain?(domain = TeSS::Config.base_uri.domain)
-    (host == domain || host.ends_with?(".#{domain}"))
+  def valid_login_domain?(login_host = TeSS::Config.base_uri.host)
+    TessOmniauthRedirectUris.valid_login_domain?(host, login_host)
   end
 
   private
