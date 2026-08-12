@@ -8,6 +8,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
@@ -22,82 +23,2529 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
 
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00001">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label>photon and neutron technique</rdfs:label>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00002">
-        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
-        <rdfs:label>defined by experimental probe</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00003">
-        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
-        <rdfs:label>defined by experimental physical process</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00004">
-        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
-        <rdfs:label>defined by functional dependence</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00005">
-        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
-        <rdfs:label>defined by purpose</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020044">
-        <rdfs:label>emission momentum</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01001">
-        <rdfs:label>neutron time of flight technique</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01231">
-        <rdfs:label>nanoimprint lithography</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020039">
-        <rdfs:label>electronic excitation</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020034">
-        <rdfs:label>electron emission</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01120">
-        <rdfs:label>quasielastic neutron spin echo scattering</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01146">
-        <rdfs:label>photoemission electron microscopy</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01098">
-        <rdfs:label>grazing incidence diffraction</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020026">
-        <rdfs:label>low momentum transfer scattering</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01196">
-        <rdfs:label>x-ray absorption spectroscopy</rdfs:label>
-        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
-    </owl:Class>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020044">
+    <rdfs:label>emission momentum</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01001">
+    <rdfs:label>neutron time of flight technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01231">
+    <rdfs:label>nanoimprint lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020039">
+    <rdfs:label>electronic excitation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020034">
+    <rdfs:label>electron emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01120">
+    <rdfs:label>quasielastic neutron spin echo scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01146">
+    <rdfs:label>photoemission electron microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01098">
+    <rdfs:label>grazing incidence diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020026">
+    <rdfs:label>low momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01196">
+    <rdfs:label>x-ray absorption spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01072">
+    <rdfs:label>obtain electronic density of states</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01230">
+    <rdfs:label>single-shot imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01256">
+    <rdfs:label>polarimetry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01050">
+    <rdfs:label>nuclear resonance</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020006">
+    <rdfs:label>UV photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011001">
+    <rdfs:label>neutron</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01136">
+    <rdfs:label>diffraction imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01070">
+    <rdfs:label>obtain ultrahigh resolution spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014012">
+    <rdfs:label>magnetism study</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00303">
+    <rdfs:label>versus position</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00103">
+    <rdfs:label>solid probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01301">
+    <rdfs:label>x-ray magnetochiral dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01142">
+    <rdfs:label>magnetic linear dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01172">
+    <rdfs:label>surface x-ray diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020063">
+    <rdfs:label>crystallographic study</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020080">
+    <rdfs:label>grayscale lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020019">
+    <rdfs:label>dynamical diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01221">
+    <rdfs:label>XMCD total electron yield</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01104">
+    <rdfs:label>high resolution photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2001000">
+    <rdfs:label>probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01114">
+    <rdfs:label>muon spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01246">
+    <rdfs:label>cold neutron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01143">
+    <rdfs:label>magnetochiral dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01090">
+    <rdfs:label>dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01238">
+    <rdfs:label>pulse overlap diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01007">
+    <rdfs:label>UV visible photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01008">
+    <rdfs:label>visible photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020031">
+    <rdfs:label>visible photon emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011003">
+    <rdfs:label>solid probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01210">
+    <rdfs:label>propagation phase contrast microtomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01184">
+    <rdfs:label>x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00406">
+    <rdfs:label>obtain internal field</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01170">
+    <rdfs:label>single wavelength anomalous diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01086">
+    <rdfs:label>characterize magnetic excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00102">
+    <rdfs:label>muon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01103">
+    <rdfs:label>hard x-ray photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01133">
+    <rdfs:label>ultra small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00404">
+    <rdfs:label>therapy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01302">
+    <rdfs:label>x-ray natural circular dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014001">
+    <rdfs:label>obtain spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01109">
+    <rdfs:label>infrared spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01330">
+    <rdfs:label>diffuse multiple scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014000">
+    <rdfs:label>obtain atomic structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011000">
+    <rdfs:label>photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01262">
+    <rdfs:label>x-ray refraction tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00401">
+    <rdfs:label>obtain spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012004">
+    <rdfs:label>refraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020028">
+    <rdfs:label>low surface momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01096">
+    <rdfs:label>fluorescence tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020002">
+    <rdfs:label>IR photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01188">
+    <rdfs:label>small angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01200">
+    <rdfs:label>x-ray emission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020056">
+    <rdfs:label>obtain electronic band structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01042">
+    <rdfs:label>high energy resolution emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01272">
+    <rdfs:label>nanofocus x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01141">
+    <rdfs:label>magnetic circular dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012001">
+    <rdfs:label>emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020030">
+    <rdfs:label>photon emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01295">
+    <rdfs:label>x-ray scanning microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01071">
+    <rdfs:label>obtain 3D spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01084">
+    <rdfs:label>time dependent study</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01183">
+    <rdfs:label>resonant inelastic x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01107">
+    <rdfs:label>inelastic small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01160">
+    <rdfs:label>energy dispersive x-ray diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01220">
+    <rdfs:label>total electron yield</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020058">
+    <rdfs:label>obtain magnetic vector</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011002">
+    <rdfs:label>muon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01289">
+    <rdfs:label>soft x-ray imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01249">
+    <rdfs:label>cold neutron imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01217">
+    <rdfs:label>neutron diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01151">
+    <rdfs:label>absorption tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020079">
+    <rdfs:label>nanoimprint lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01158">
+    <rdfs:label>in-situ surface diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020020">
+    <rdfs:label>coherent diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01031">
+    <rdfs:label>atomic scale diffraction 2D surface or film</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020003">
+    <rdfs:label>THz photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01223">
+    <rdfs:label>lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020013">
+    <rdfs:label>thermal neutron beam</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01057">
+    <rdfs:label>versus emitted energy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01288">
+    <rdfs:label>scanning x-ray fluorescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020049">
+    <rdfs:label>sample magnetic field</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01117">
+    <rdfs:label>photon correlation spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01159">
+    <rdfs:label>energy dispersive diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01124">
+    <rdfs:label>small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020037">
+    <rdfs:label>muon spin resonance</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00300">
+    <rdfs:label>versus energy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01308">
+    <rdfs:label>molecular replacement</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020051">
+    <rdfs:label>obtain high resolution spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01006">
+    <rdfs:label>THz photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01250">
+    <rdfs:label>high-resolution neutron imaging </rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020070">
+    <rdfs:label>imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01132">
+    <rdfs:label>UV circular dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020047">
+    <rdfs:label>sample temperature</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01192">
+    <rdfs:label>circular dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01150">
+    <rdfs:label>grating interferometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01052">
+    <rdfs:label>spin echo technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01166">
+    <rdfs:label>photo crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01274">
+    <rdfs:label>anomalous small angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020066">
+    <rdfs:label>characterize magnetic excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01149">
+    <rdfs:label>x-ray reflectivity</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01219">
+    <rdfs:label>scanning transmission x-ray microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01199">
+    <rdfs:label>x-ray absorption near edge structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01129">
+    <rdfs:label>tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01062">
+    <rdfs:label>versus photon circular polarization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01137">
+    <rdfs:label>x-ray magnetic circular dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01263">
+    <rdfs:label>time dependent scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00004">
+    <rdfs:label>defined by functional dependence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01085">
+    <rdfs:label>characterize electronic excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01038">
+    <rdfs:label>ultra low momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01171">
+    <rdfs:label>small molecule diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01213">
+    <rdfs:label>ptychographic nanotomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013002">
+    <rdfs:label>polarization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020022">
+    <rdfs:label>incoherent scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020048">
+    <rdfs:label>sample pressure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01094">
+    <rdfs:label>fluorescence luminescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01329">
+    <rdfs:label>kossel lines</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01320">
+    <rdfs:label>fourier transform infrared spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01226">
+    <rdfs:label>x-ray interference lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00208">
+    <rdfs:label>dispersive technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01078">
+    <rdfs:label>obtain charge quadrupole</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01055">
+    <rdfs:label>photo excitation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01064">
+    <rdfs:label>versus sample temperature</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01318">
+    <rdfs:label>atomic force microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01311">
+    <rdfs:label>lipidic cubic phase serial synchrotron crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00202">
+    <rdfs:label>absorption technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01121">
+    <rdfs:label>reflectometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020032">
+    <rdfs:label>x-ray emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01191">
+    <rdfs:label>wide angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01313">
+    <rdfs:label>magnetic x-ray tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01280">
+    <rdfs:label>diffuse small angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020072">
+    <rdfs:label>small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01261">
+    <rdfs:label>x-ray refraction imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020001">
+    <rdfs:label>nanofocussed probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01153">
+    <rdfs:label>ultrafast tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00400">
+    <rdfs:label>obtain atomic structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01328">
+    <rdfs:label>divergent beam diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014007">
+    <rdfs:label>characterize excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020073">
+    <rdfs:label>wide angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01207">
+    <rdfs:label>x-ray tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01254">
+    <rdfs:label>microfocus x-ray fluorescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01077">
+    <rdfs:label>obtain magnetic vector</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01275">
+    <rdfs:label>anomalous solution x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01298">
+    <rdfs:label>elastic neutron scattering spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01290">
+    <rdfs:label>x-ray diffraction imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00100">
+    <rdfs:label>photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01000">
+    <rdfs:label>time of flight technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01218">
+    <rdfs:label>ambient pressure x-ray photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01044">
+    <rdfs:label>visible photon emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01205">
+    <rdfs:label>x-ray photon correlation spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01269">
+    <rdfs:label>photoelectron emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01245">
+    <rdfs:label>inelastic neutron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020014">
+    <rdfs:label>cold neutron beam</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01273">
+    <rdfs:label>small angle inelastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01316">
+    <rdfs:label>grazing incidence wide angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01027">
+    <rdfs:label>atomic scale diffraction 3D volume</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01214">
+    <rdfs:label>instrumentation testing</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01003">
+    <rdfs:label>single shot technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014008">
+    <rdfs:label>manufacturing</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01011">
+    <rdfs:label>EUV photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01022">
+    <rdfs:label>diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01163">
+    <rdfs:label>high pressure single crystal diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01004">
+    <rdfs:label>nanofocussed probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01247">
+    <rdfs:label>thermal neutron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01271">
+    <rdfs:label>microfocus x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020007">
+    <rdfs:label>VUV photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01314">
+    <rdfs:label>correlative light x-ray microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01182">
+    <rdfs:label>inelastic x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01054">
+    <rdfs:label>atomic core excitation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00104">
+    <rdfs:label>scanning probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01080">
+    <rdfs:label>obtain charge density</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020027">
+    <rdfs:label>ultra low momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00304">
+    <rdfs:label>versus time</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01139">
+    <rdfs:label>natural linear dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01091">
+    <rdfs:label>dichroism spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01195">
+    <rdfs:label>raman spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020029">
+    <rdfs:label>coherent emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01258">
+    <rdfs:label>x-ray photoelectron emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01018">
+    <rdfs:label>monochromatic neutron probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01287">
+    <rdfs:label>micro grazing incidence small angle x-ray scattering tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01180">
+    <rdfs:label>x-ray microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01235">
+    <rdfs:label>high resolution thermal neutron powder diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01156">
+    <rdfs:label>x-ray spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020018">
+    <rdfs:label>diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020025">
+    <rdfs:label>high momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020067">
+    <rdfs:label>characterize lattice excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01014">
+    <rdfs:label>tender x-ray probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012007">
+    <rdfs:label>dispersion</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00409">
+    <rdfs:label>testing</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012009">
+    <rdfs:label>force measurement</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01093">
+    <rdfs:label>photoemission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01193">
+    <rdfs:label>energy dispersive x-ray spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020045">
+    <rdfs:label>energy loss</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014010">
+    <rdfs:label>medical application</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020069">
+    <rdfs:label>grazing incidence diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020016">
+    <rdfs:label>elastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020024">
+    <rdfs:label>quasielastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01279">
+    <rdfs:label>diffuse small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012003">
+    <rdfs:label>propagation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01034">
+    <rdfs:label>inelastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01174">
+    <rdfs:label>coherent diffraction imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01286">
+    <rdfs:label>micro small angle x-ray scattering tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01112">
+    <rdfs:label>fluorescence imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00201">
+    <rdfs:label>emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01116">
+    <rdfs:label>phase contrast imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01259">
+    <rdfs:label>x-ray magnetic linear dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01201">
+    <rdfs:label>electron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01056">
+    <rdfs:label>versus incident energy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01299">
+    <rdfs:label>high resolution inelastic neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00003">
+    <rdfs:label>defined by experimental physical process</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011004">
+    <rdfs:label>scanning probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013005">
+    <rdfs:label>emission mass</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01181">
+    <rdfs:label>pair distribution function</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01209">
+    <rdfs:label>absorption microtomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01063">
+    <rdfs:label>versus time ultrafast</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01194">
+    <rdfs:label>microfocus spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01073">
+    <rdfs:label>obtain electronic density of occupied states</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01203">
+    <rdfs:label>spin resolved photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01291">
+    <rdfs:label>scanning angle resolved photoemission spectromicroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2004000">
+    <rdfs:label>functional dependence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01264">
+    <rdfs:label>time dependent diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01331">
+    <rdfs:label>MHz x-ray microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01315">
+    <rdfs:label>cryo x-ray microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01040">
+    <rdfs:label>high momentum transfer resolution scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00001">
+    <rdfs:label>photon and neutron technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00306">
+    <rdfs:label>versus sample state</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01260">
+    <rdfs:label>resonant elastic x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020010">
+    <rdfs:label>hard x-ray</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01237">
+    <rdfs:label>thermal neutron single crystal diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00200">
+    <rdfs:label>scattering technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01009">
+    <rdfs:label>UV photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01225">
+    <rdfs:label>EUV lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01294">
+    <rdfs:label>x-ray photoemission electron microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01325">
+    <rdfs:label>borrmann effect</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01164">
+    <rdfs:label>macromolecular crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01128">
+    <rdfs:label>surface diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020078">
+    <rdfs:label>nonresonant diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01095">
+    <rdfs:label>x-ray fluorescence spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00002">
+    <rdfs:label>defined by experimental probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01227">
+    <rdfs:label>x-ray absorption</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012005">
+    <rdfs:label>reflection</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00408">
+    <rdfs:label>manufacturing technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01036">
+    <rdfs:label>high momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01135">
+    <rdfs:label>absorption spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01130">
+    <rdfs:label>UV VUV spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01016">
+    <rdfs:label>thermal neutron probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020050">
+    <rdfs:label>sample electric field</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012010">
+    <rdfs:label>nonlinear interaction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020074">
+    <rdfs:label>x-ray fluorescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01066">
+    <rdfs:label>versus sample magnetic field</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01297">
+    <rdfs:label>high resolution x-ray photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01028">
+    <rdfs:label>atomic scale diffraction 3D volume 3D periodic</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020053">
+    <rdfs:label>obtain electronic density of states</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014002">
+    <rdfs:label>obtain electronic ground state properties</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01173">
+    <rdfs:label>x-ray standing wave</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01236">
+    <rdfs:label>neutron single crystal diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00411">
+    <rdfs:label>chiral determination</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01276">
+    <rdfs:label>grazing incidence small angle neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01224">
+    <rdfs:label>x-ray lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01212">
+    <rdfs:label>ptychography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01190">
+    <rdfs:label>total scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00206">
+    <rdfs:label>resonance phenomenon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01012">
+    <rdfs:label>x-ray probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020059">
+    <rdfs:label>obtain charge quadrupole</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00402">
+    <rdfs:label>obtain electronic ground state properties</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01187">
+    <rdfs:label>resonant soft x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020075">
+    <rdfs:label>instrumentation testing</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01240">
+    <rdfs:label>ultra small angle neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01266">
+    <rdfs:label>x-ray holography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00101">
+    <rdfs:label>neutron probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020046">
+    <rdfs:label>emitted polarization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012006">
+    <rdfs:label>resonance phenomenon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01208">
+    <rdfs:label>x-ray microtomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01303">
+    <rdfs:label>x-ray natural linear dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01304">
+    <rdfs:label>fragment screening</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014009">
+    <rdfs:label>testing</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01268">
+    <rdfs:label>mass spectrometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011006">
+    <rdfs:label>microfocussed probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020061">
+    <rdfs:label>obtain charge density</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020083">
+    <rdfs:label>surface crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01113">
+    <rdfs:label>fluorescence microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01097">
+    <rdfs:label>gamma spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01310">
+    <rdfs:label>fixed target serial synchrotron crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01024">
+    <rdfs:label>coherent diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020057">
+    <rdfs:label>obtain atomic tensor properties</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00209">
+    <rdfs:label>interferometry technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01157">
+    <rdfs:label>in-situ diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014003">
+    <rdfs:label>obtain dynamics</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01111">
+    <rdfs:label>luminescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00204">
+    <rdfs:label>refraction technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020023">
+    <rdfs:label>inelastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00302">
+    <rdfs:label>versus polarization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2000000">
+    <rdfs:label>photon and neutron specifiers</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020021">
+    <rdfs:label>reference beam</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01033">
+    <rdfs:label>incoherent scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014011">
+    <rdfs:label>chiral determination</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01049">
+    <rdfs:label>resonant scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01127">
+    <rdfs:label>spin echo small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01327">
+    <rdfs:label>x-ray birefringence imaging </rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00301">
+    <rdfs:label>versus momentum transfer</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01283">
+    <rdfs:label>soft x-ray diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01204">
+    <rdfs:label>x-ray photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01025">
+    <rdfs:label>reference beam</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012000">
+    <rdfs:label>scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020060">
+    <rdfs:label>obtain atomic magnetic structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01222">
+    <rdfs:label>spin and angle resolved photoemission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01177">
+    <rdfs:label>x-ray fluorescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01145">
+    <rdfs:label>electron microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01138">
+    <rdfs:label>linear dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01102">
+    <rdfs:label>x-ray single crystal diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01255">
+    <rdfs:label>ellipsometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020052">
+    <rdfs:label>obtain 3D spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01267">
+    <rdfs:label>ion imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01029">
+    <rdfs:label>single crystal diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01061">
+    <rdfs:label>versus photon linear polarization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01281">
+    <rdfs:label>inelastic x-ray small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020008">
+    <rdfs:label>EUV photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013006">
+    <rdfs:label>sample state</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01333">
+    <rdfs:label>x-ray propagation phase contrast microtomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2002000">
+    <rdfs:label>purpose</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01115">
+    <rdfs:label>optical spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01284">
+    <rdfs:label>x-ray photoelectron diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01248">
+    <rdfs:label>neutron transmission radiography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020071">
+    <rdfs:label>luminescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01037">
+    <rdfs:label>low momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01229">
+    <rdfs:label>nonlinear x-ray spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01081">
+    <rdfs:label>obtain magnetic density</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01005">
+    <rdfs:label>IR photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01069">
+    <rdfs:label>microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01065">
+    <rdfs:label>versus sample pressure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012002">
+    <rdfs:label>absorption</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01161">
+    <rdfs:label>grazing incidence x-ray diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00205">
+    <rdfs:label>reflection technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01048">
+    <rdfs:label>ion emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020035">
+    <rdfs:label>ion emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01125">
+    <rdfs:label>spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01323">
+    <rdfs:label>radiotherapy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01108">
+    <rdfs:label>inelastic scattering spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01324">
+    <rdfs:label>surface crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01020">
+    <rdfs:label>elastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01068">
+    <rdfs:label>obtain high resolution spatial map</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01243">
+    <rdfs:label>polarized neutron reflectometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00211">
+    <rdfs:label>nonlinear interaction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01089">
+    <rdfs:label>angle resolved photoemission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00405">
+    <rdfs:label>drug fragment binding</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01198">
+    <rdfs:label>extended x-ray absorption fine structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01046">
+    <rdfs:label>gamma-ray emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01032">
+    <rdfs:label>micro scale diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01257">
+    <rdfs:label>UV photoelectron emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01322">
+    <rdfs:label>microfocus x-ray absorption spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01306">
+    <rdfs:label>microfocus macromolecular crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01197">
+    <rdfs:label>x-ray absorption fine structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01239">
+    <rdfs:label>neutron reflectometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01126">
+    <rdfs:label>spin echo resolved grazing incidence scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01305">
+    <rdfs:label>long wavelength crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01010">
+    <rdfs:label>VUV photon probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01155">
+    <rdfs:label>absorption and phase contrast nanotomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020065">
+    <rdfs:label>characterize electronic excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01047">
+    <rdfs:label>electron emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020054">
+    <rdfs:label>obtain electronic density of occupied states</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020076">
+    <rdfs:label>optics characterization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00106">
+    <rdfs:label>microfocussed probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01211">
+    <rdfs:label>ultrafast microtomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01076">
+    <rdfs:label>obtain atomic tensor properties</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01045">
+    <rdfs:label>x-ray emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020077">
+    <rdfs:label>lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01300">
+    <rdfs:label>x-ray linear dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020011">
+    <rdfs:label>tender x-ray</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01013">
+    <rdfs:label>hard x-ray probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020038">
+    <rdfs:label>spin echo</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01292">
+    <rdfs:label>nano angle resolved photoemission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020036">
+    <rdfs:label>nuclear resonance</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01067">
+    <rdfs:label>versus sample electric field</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01326">
+    <rdfs:label>birefringence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01148">
+    <rdfs:label>scanning probe microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01189">
+    <rdfs:label>small angle neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020041">
+    <rdfs:label>photo excitation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01162">
+    <rdfs:label>grazing incidence small angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01167">
+    <rdfs:label>photoelectron diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2012008">
+    <rdfs:label>interferometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01293">
+    <rdfs:label>scanning photoelectron microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01100">
+    <rdfs:label>neutron powder diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013003">
+    <rdfs:label>position</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01285">
+    <rdfs:label>x-ray imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00105">
+    <rdfs:label>pulsed probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2011005">
+    <rdfs:label>pulsed probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01030">
+    <rdfs:label>powder diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01059">
+    <rdfs:label>versus energy loss</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013000">
+    <rdfs:label>energy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00305">
+    <rdfs:label>versus emission mass</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01206">
+    <rdfs:label>microtomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01186">
+    <rdfs:label>resonant x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01134">
+    <rdfs:label>wide angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01035">
+    <rdfs:label>quasielastic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01321">
+    <rdfs:label>energy dispersive extended x-ray absorption fine structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014006">
+    <rdfs:label>obtain internal field</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01147">
+    <rdfs:label>scanning probe imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01053">
+    <rdfs:label>electronic excitation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00210">
+    <rdfs:label>force measurement</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00410">
+    <rdfs:label>medical application</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01101">
+    <rdfs:label>x-ray powder diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01168">
+    <rdfs:label>serial femtosecond crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020017">
+    <rdfs:label>diffuse scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01176">
+    <rdfs:label>UV circular dichroism imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01233">
+    <rdfs:label>polymer micro and nanografting</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01083">
+    <rdfs:label>obtain local coordination</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01278">
+    <rdfs:label>very small angle neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01232">
+    <rdfs:label>grayscale lithography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020082">
+    <rdfs:label>radiotherapy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01026">
+    <rdfs:label>atomic scale diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01074">
+    <rdfs:label>obtain electronic density of unoccupied states</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01058">
+    <rdfs:label>versus emission momentum</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01178">
+    <rdfs:label>infrared microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00407">
+    <rdfs:label>characterize excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01242">
+    <rdfs:label>neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020040">
+    <rdfs:label>atomic core excitation</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01079">
+    <rdfs:label>obtain atomic magnetic structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01041">
+    <rdfs:label>coherent emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01105">
+    <rdfs:label>holography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01202">
+    <rdfs:label>photoelectron spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01082">
+    <rdfs:label>crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01075">
+    <rdfs:label>obtain electronic band structure</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01154">
+    <rdfs:label>nanotomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01169">
+    <rdfs:label>serial synchrotron crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01119">
+    <rdfs:label>spin echo  scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014004">
+    <rdfs:label>therapy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01123">
+    <rdfs:label>scanning transmission microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01039">
+    <rdfs:label>low surface momentum transfer scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01165">
+    <rdfs:label>multi wavelength anomalous diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01019">
+    <rdfs:label>pulsed neutron TOF probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2003000">
+    <rdfs:label>process</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020033">
+    <rdfs:label>gamma-ray emission</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01251">
+    <rdfs:label>THz near field microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01087">
+    <rdfs:label>characterize lattice excitations</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01317">
+    <rdfs:label>high resolution angle resolved photoemission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020062">
+    <rdfs:label>obtain magnetic density</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01015">
+    <rdfs:label>soft x-ray probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01131">
+    <rdfs:label>UV and visible circular dichroism spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01277">
+    <rdfs:label>time of flight small angle neutron scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01152">
+    <rdfs:label>propagation phase contrast tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01060">
+    <rdfs:label>versus emitted polarization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01309">
+    <rdfs:label>time resolved serial femtosecond crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020043">
+    <rdfs:label>emitted energy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01252">
+    <rdfs:label>magnetic scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01185">
+    <rdfs:label>light scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020005">
+    <rdfs:label>visible photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013001">
+    <rdfs:label>momentum transfer</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00403">
+    <rdfs:label>obtain dynamics</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2014005">
+    <rdfs:label>drug fragment binding</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01110">
+    <rdfs:label>infrared microspectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020084">
+    <rdfs:label>divergent beam diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020009">
+    <rdfs:label>x-ray</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01144">
+    <rdfs:label>natural circular dichroism</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00005">
+    <rdfs:label>defined by purpose</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01228">
+    <rdfs:label>nonresonant diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01051">
+    <rdfs:label>muon spin resonance</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020042">
+    <rdfs:label>incident energy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01002">
+    <rdfs:label>ultrafast probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01106">
+    <rdfs:label>imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020012">
+    <rdfs:label>soft x-ray</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01282">
+    <rdfs:label>soft x-ray small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020081">
+    <rdfs:label>polymer micro and nanografting</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01253">
+    <rdfs:label>magnetic diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020064">
+    <rdfs:label>obtain local coordination</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01270">
+    <rdfs:label>nuclear resonant scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01265">
+    <rdfs:label>time dependent absorption</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01216">
+    <rdfs:label>x-ray diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01118">
+    <rdfs:label>polarised reflectivity</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01241">
+    <rdfs:label>ultra small angle x-ray scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020068">
+    <rdfs:label>fluorescence luminescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01017">
+    <rdfs:label>cold neutron probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01179">
+    <rdfs:label>optical microscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01043">
+    <rdfs:label>photon emission technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01234">
+    <rdfs:label>high resolution neutron powder diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01319">
+    <rdfs:label>atomic force microscope infrared spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01099">
+    <rdfs:label>grazing incidence small angle scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01140">
+    <rdfs:label>x-ray excited optical luminescence</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00207">
+    <rdfs:label>magnetism technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01307">
+    <rdfs:label>nanofocus macromolecular crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020004">
+    <rdfs:label>UV visible photon</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01296">
+    <rdfs:label>high resolution core-level photoemission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01175">
+    <rdfs:label>infrared nanospectroscopy imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01021">
+    <rdfs:label>diffuse scattering</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020015">
+    <rdfs:label>monochromatic neutron beam</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET00203">
+    <rdfs:label>propagation technique</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020055">
+    <rdfs:label>obtain electronic density of unoccupied states</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2013004">
+    <rdfs:label>time</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01244">
+    <rdfs:label>time-of-flight spectrometry</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET2020000">
+    <rdfs:label>ultrafast probe</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01215">
+    <rdfs:label>optics characterization</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01023">
+    <rdfs:label>dynamical diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01332">
+    <rdfs:label>x-ray propagation phase contrast tomography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01122">
+    <rdfs:label>resonant diffraction</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01312">
+    <rdfs:label>time resolved serial synchrotron crystallography</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01088">
+    <rdfs:label>absorption contrast imaging</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pan-science/PaNET/PaNET01092">
+    <rdfs:label>emission spectroscopy</rdfs:label>
+    <oboInOwl:inSubset rdf:resource="http://edamontology.org/topics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
 </rdf:RDF>

@@ -30,4 +30,12 @@ class PanetOntologyTest < ActiveSupport::TestCase
     assert term
     assert_equal 'electron emission', term.preferred_label
   end
+
+  test 'should include small angle scattering in topics subset' do
+    term = Panet::Ontology.instance.lookup_by_name('small angle scattering')
+
+    assert term
+    assert_equal 'small angle scattering', term.preferred_label
+    assert_includes Panet::Ontology.instance.all_topics.map(&:preferred_label), 'small angle scattering'
+  end
 end

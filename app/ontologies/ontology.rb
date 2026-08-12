@@ -92,6 +92,8 @@ class Ontology
   end
 
   def cache_path
-    "#{path}--linkeddata-#{Gem.loaded_specs["linkeddata"].version}.cache"
+    stat = File.exist?(path) ? File.stat(path) : nil
+    file_signature = stat ? "#{stat.mtime.to_i}-#{stat.size}" : 'missing'
+    "#{path}-#{file_signature}--linkeddata-#{Gem.loaded_specs["linkeddata"].version}.cache"
   end
 end
