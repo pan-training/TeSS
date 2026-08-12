@@ -137,7 +137,11 @@ class Event < ApplicationRecord
   has_many :widget_logs, as: :resource
   has_many :stars, as: :resource, dependent: :destroy
 
-  has_ontology_terms(:scientific_topics, branch: EDAM.topics)
+  has_ontology_terms(:scientific_topics,
+                     ontologies: [{ ontology: Edam::Ontology.instance,
+                                    branch: EDAM.topics },
+                                  { ontology: Panet::Ontology.instance,
+                                    branch: EDAM.topics }])
   has_ontology_terms(:operations, branch: EDAM.operations)
 
   has_person_role :contributors

@@ -35,7 +35,7 @@ module MaterialsHelper
   end
 
   def scientific_topic_names_for_autocomplete
-    Edam::Ontology.instance.all_topics.map(&:preferred_label)
+    OntologyRegistry.topics.map(&:preferred_label)
   end
 
   def material_status_title_for_label(label)

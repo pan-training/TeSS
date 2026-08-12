@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     resources :activities, only: [:index]
   end
 
-  get 'edam/terms' => 'edam#terms'
-  get 'edam/topics' => 'edam#topics'
-  get 'edam/operations' => 'edam#operations'
+  get 'ontologies/terms' => 'ontologies#terms'
+  get 'ontologies/topics' => 'ontologies#topics'
+  get 'ontologies/operations' => 'ontologies#operations'
 
   #get 'static/home'
   get 'about' => 'about#tess', as: 'about'

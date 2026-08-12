@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/pan-science/PaNET/PaNET.owl#"
+     xml:base="http://purl.org/pan-science/PaNET/PaNET.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://purl.org/pan-science/PaNET/PaNET.owl">
+        <terms:title>The Photon and Neutron Experimental Techniques Ontology</terms:title>
+        <vann:preferredNamespacePrefix>panet</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="http://purl.org/pan-science/PaNET/"/>
+    </owl:Ontology>
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00001">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>photon and neutron technique</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00002">
+        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
+        <rdfs:label>defined by experimental probe</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00003">
+        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
+        <rdfs:label>defined by experimental physical process</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00004">
+        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
+        <rdfs:label>defined by functional dependence</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET00005">
+        <rdfs:subClassOf rdf:resource="http://purl.org/pan-science/PaNET/PaNET00001"/>
+        <rdfs:label>defined by purpose</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020044">
+        <rdfs:label>emission momentum</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01001">
+        <rdfs:label>neutron time of flight technique</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01231">
+        <rdfs:label>nanoimprint lithography</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020039">
+        <rdfs:label>electronic excitation</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020034">
+        <rdfs:label>electron emission</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01120">
+        <rdfs:label>quasielastic neutron spin echo scattering</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01146">
+        <rdfs:label>photoemission electron microscopy</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01098">
+        <rdfs:label>grazing incidence diffraction</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET2020026">
+        <rdfs:label>low momentum transfer scattering</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.org/pan-science/PaNET/PaNET01196">
+        <rdfs:label>x-ray absorption spectroscopy</rdfs:label>
+        <obo:inSubset rdf:resource="http://edamontology.org/topics"/>
+    </owl:Class>
+</rdf:RDF>

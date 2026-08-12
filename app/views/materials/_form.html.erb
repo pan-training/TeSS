@@ -30,7 +30,7 @@
                     title: t('materials.hints.resource_type'), visibility_toggle: TeSS::Config.feature['materials_disabled'] %>
 
   <!-- Field: Scientific Topics -->
-  <%= f.autocompleter :scientific_topics, url: edam_topics_path, template: 'autocompleter/term',
+  <%= f.autocompleter :scientific_topics, url: ontologies_topics_path, template: 'autocompleter/term',
                       id_field: :uri, label_field: :preferred_label,
                       visibility_toggle: TeSS::Config.feature['materials_disabled'] %>
 
@@ -141,7 +141,7 @@
   %>
 
   <!-- Operations: check disabled -->
-  <%= f.autocompleter :operations, url: edam_operations_path, template: 'autocompleter/term',
+  <%= f.autocompleter :operations, url: ontologies_operations_path, template: 'autocompleter/term',
                       id_field: :uri, label_field: :preferred_label, visibility_toggle: TeSS::Config.feature['disabled'] %>
 
   <!-- Field: External Resources -->

@@ -106,7 +106,11 @@ class Material < ApplicationRecord
   has_many :event_materials, dependent: :destroy
   has_many :events, through: :event_materials
 
-  has_ontology_terms(:scientific_topics, branch: EDAM.topics)
+  has_ontology_terms(:scientific_topics,
+                     ontologies: [{ ontology: Edam::Ontology.instance,
+                                    branch: EDAM.topics },
+                                  { ontology: Panet::Ontology.instance,
+                                    branch: EDAM.topics }])
   has_ontology_terms(:operations, branch: EDAM.operations)
 
   has_many :stars, as: :resource, dependent: :destroy

@@ -65,7 +65,11 @@ class Workflow < ApplicationRecord
   # has_one :owner, foreign_key: "id", class_name: "User"
   belongs_to :user
 
-  has_ontology_terms(:scientific_topics, branch: EDAM.topics)
+  has_ontology_terms(:scientific_topics,
+                     ontologies: [{ ontology: Edam::Ontology.instance,
+                                    branch: EDAM.topics },
+                                  { ontology: Panet::Ontology.instance,
+                                    branch: EDAM.topics }])
 
   has_many :stars,  as: :resource, dependent: :destroy
 

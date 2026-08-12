@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EdamControllerTest < ActionController::TestCase
+class OntologiesControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   test 'should filter topics' do

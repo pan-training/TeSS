@@ -9,7 +9,7 @@ module TopicCuration
     #puts "RESOURCE: #{resource.inspect}"
     authorize resource, :update?
 
-    term = Edam::Ontology.instance.lookup(params[:uri])
+    term = OntologyRegistry.lookup_term(params[:uri])
     field = params[:field]
 
     log_params = { uri: term.uri,
@@ -29,7 +29,7 @@ module TopicCuration
     resource = instance_variable_get("@#{controller_name.singularize}")
     authorize resource, :update?
 
-    term = Edam::Ontology.instance.lookup(params[:uri])
+    term = OntologyRegistry.lookup_term(params[:uri])
     field = params[:field]
 
     log_params = { uri: term.uri,
@@ -78,4 +78,5 @@ module TopicCuration
                              parameters: log_params
     head :ok
   end
+
 end

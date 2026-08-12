@@ -12,7 +12,7 @@
               input_html: { rows: '5', title: t('learning_paths.hints.description') } %>
 
   <!-- Field: Scientific Topics -->
-  <%= f.autocompleter :scientific_topics, url: edam_topics_path, template: 'autocompleter/term',
+  <%= f.autocompleter :scientific_topics, url: ontologies_topics_path, template: 'autocompleter/term',
                       id_field: :uri, label_field: :preferred_label,
                       visibility_toggle: TeSS::Config.feature['learning_paths_disabled'] %>
 

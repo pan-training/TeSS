@@ -1,18 +1,18 @@
-# The controller for actions related to the EDAM ontology
-class EdamController < ApplicationController
+# The controller for actions related to ontology autocompletion terms.
+class OntologiesController < ApplicationController
 
   skip_before_action :authenticate_user!, :authenticate_user_from_token!
 
   def terms
-    list(Edam::Ontology.instance.all_topics + Edam::Ontology.instance.all_operations)
+    list(OntologyRegistry.topics + OntologyRegistry.operations)
   end
 
   def operations
-    list(Edam::Ontology.instance.all_operations)
+    list(OntologyRegistry.operations)
   end
 
   def topics
-    list(Edam::Ontology.instance.all_topics)
+    list(OntologyRegistry.topics)
   end
 
   private
@@ -24,7 +24,7 @@ class EdamController < ApplicationController
       @terms = @terms.select { |t| t.preferred_label.downcase.start_with?(filter_param.downcase) }
     end
 
-    render 'index', format: :json
+    render 'ontologies/index', format: :json
   end
 
   def filter_param

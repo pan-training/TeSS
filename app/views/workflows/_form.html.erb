@@ -22,7 +22,7 @@
         </div>
 
         <% if !TeSS::Config.feature['disabled'].include? 'topics' %>
-          <%= f.autocompleter :scientific_topics, url: edam_topics_path, template: 'autocompleter/term',
+          <%= f.autocompleter :scientific_topics, url: ontologies_topics_path, template: 'autocompleter/term',
                               id_field: :uri, label_field: :preferred_label %>
         <% end %>
 

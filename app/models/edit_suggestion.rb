@@ -2,7 +2,11 @@ class EditSuggestion < ApplicationRecord
   belongs_to :suggestible, polymorphic: true
   after_create :init_data_fields
 
-  has_ontology_terms(:scientific_topics, branch: EDAM.topics)
+  has_ontology_terms(:scientific_topics,
+                     ontologies: [{ ontology: Edam::Ontology.instance,
+                                    branch: EDAM.topics },
+                                  { ontology: Panet::Ontology.instance,
+                                    branch: EDAM.topics }])
   has_ontology_terms(:operations, branch: EDAM.operations)
 
   # data_fields: json field for storing any additional parameters

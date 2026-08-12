@@ -3,7 +3,7 @@ module HasExternalResources
   extend ActiveSupport::Concern
 
   included do
-    has_many :external_resources, as: :source, dependent: :destroy
+    has_many :external_resources, -> { order(:created_at, :id) }, as: :source, dependent: :destroy
     accepts_nested_attributes_for :external_resources, allow_destroy: true
     before_validation :remove_duplicate_external_resources
 
@@ -43,7 +43,9 @@ module HasExternalResources
       if er.is_a?(ExternalResource)
         er
       else
-        existing.detect { |ex| ex.url == er[:url] && ex.title == er[:title] } || external_resources.build(er)
+        url = er[:url] || er['url']
+        title = er[:title] || er['title']
+        existing.detect { |ex| ex.url == url && ex.title == title } || external_resources.build(url: url, title: title)
       end
     end
 

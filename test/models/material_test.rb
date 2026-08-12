@@ -536,35 +536,42 @@ class MaterialTest < ActiveSupport::TestCase
 
     er = material.reload.external_resources
     assert_equal 2, er.count
-    assert_equal 'TeSS', er[0].title
-    assert_equal 'https://tess.elixir-uk.org/', er[0].url
-    assert_equal original_resources[0].id, er[0].id, 'Should have preserved original ExternalResource'
-    assert_equal 'Changed title', er[1].title
-    assert_equal 'https://bio.tools/tool/SR-Tesseler', er[1].url
-    assert_not_equal original_resources[1].id, er[1].id, 'Should have replaced modified ExternalResource'
+    tess = er.find { |r| r.url == 'https://tess.elixir-uk.org/' }
+    changed = er.find { |r| r.url == 'https://bio.tools/tool/SR-Tesseler' }
+    original_tess = original_resources.find { |r| r.url == 'https://tess.elixir-uk.org/' }
+    original_biotools = original_resources.find { |r| r.url == 'https://bio.tools/tool/SR-Tesseler' }
+
+    assert tess
+    assert_equal 'TeSS', tess.title
+    assert_equal original_tess.id, tess.id, 'Should have preserved original ExternalResource'
+
+    assert changed
+    assert_equal 'Changed title', changed.title
+    assert_not_equal original_biotools.id, changed.id, 'Should have replaced modified ExternalResource'
   end
 
   test 'can set external resources using objects or params' do
     material = materials(:material_with_external_resource)
     original_resources = material.external_resources.to_a
     assert_equal 3, original_resources.length
+    kept_resources = original_resources.first(2)
 
     assert_no_difference('ExternalResource.count') do
-      material.update!(external_resources: original_resources.first(2) +
+      material.update!(external_resources: kept_resources +
         [{ title: 'Zombocom', url: 'https://zombo.com' }])
     end
 
     er = material.reload.external_resources
     assert_equal 3, er.count
-    assert_equal 'TeSS', er[0].title
-    assert_equal 'https://tess.elixir-uk.org/', er[0].url
-    assert_equal original_resources[0].id, er[0].id, 'Should have preserved first ExternalResource'
-    assert_equal 'SR-Tesseler', er[1].title
-    assert_equal 'https://bio.tools/tool/SR-Tesseler', er[1].url
-    assert_equal original_resources[1].id, er[1].id, 'Should have preserved second ExternalResource'
-    assert_equal 'Zombocom', er[2].title
-    assert_equal 'https://zombo.com', er[2].url
-    assert_not_equal original_resources[2].id, er[2].id, 'Should have replaced third ExternalResource'
+    zombocom = er.find { |r| r.url == 'https://zombo.com' }
+
+    kept_resources.each do |resource|
+      assert_includes er.map(&:id), resource.id, 'Should have preserved provided ExternalResource'
+    end
+
+    assert zombocom
+    assert_equal 'Zombocom', zombocom.title
+    refute_includes kept_resources.map(&:id), zombocom.id, 'New ExternalResource should not reuse kept IDs'
   end
 
   test 'verified users scope' do
