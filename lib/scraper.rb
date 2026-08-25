@@ -120,6 +120,7 @@ class Scraper
 
       # get ingestor
       ingestor = Ingestors::IngestorFactory.get_ingestor(source.method)
+      ingestor.ingesting_content_provider = source.content_provider
 
       # set token
       ingestor.token = source.token

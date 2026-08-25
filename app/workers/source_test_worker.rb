@@ -19,6 +19,7 @@ class SourceTestWorker
     exception = nil
     begin
       ingestor = Ingestors::IngestorFactory.get_ingestor(source.method)
+      ingestor.ingesting_content_provider = source.content_provider
       ingestor.token = source.token
       ingestor.read(source.url)
       ingestor.filter(source)

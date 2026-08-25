@@ -21,6 +21,7 @@ module Ingestors
     end
 
     def read(source_url)
+      @bioschemas_manager.ingesting_content_provider = ingesting_content_provider
       client = OAI::Client.new source_url, headers: { 'From' => config[:mail], 'User-Agent' => config[:user_agent] }
 
       tess_instance = client.identify.descriptions.any? { |d| d.get_elements('//tess-instance').any? }

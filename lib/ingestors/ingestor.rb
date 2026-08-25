@@ -20,7 +20,7 @@ module Ingestors
 
     # accessor methods
     attr_reader :messages, :stats, :events, :materials
-    attr_accessor :token
+    attr_accessor :token, :ingesting_content_provider
 
     def self.config
       raise NotImplementedError

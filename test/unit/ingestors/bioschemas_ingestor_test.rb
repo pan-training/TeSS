@@ -224,6 +224,35 @@ class BioschemasIngestorTest < ActiveSupport::TestCase
     assert_equal [tool.id, other.id].sort, material.reload.external_resource_ids.sort
   end
 
+  test 'convert_params maps extracted provider URL for portal ingestions' do
+    @ingestor.ingesting_content_provider = content_providers(:portal_provider)
+    params = {
+      providers: [
+        { name: 'No match', url: 'https://example.org/no-match' },
+        { name: 'Goblet', url: 'http://mygoblet.org' }
+      ]
+    }
+
+    result = @ingestor.convert_params(params)
+
+    assert_equal content_providers(:goblet).id, result[:content_provider_id]
+    refute result.key?(:providers)
+  end
+
+  test 'convert_params skips provider URL mapping for non-portal ingestions' do
+    @ingestor.ingesting_content_provider = content_providers(:organisation_provider)
+    params = {
+      providers: [
+        { name: 'Goblet', url: 'http://mygoblet.org' }
+      ]
+    }
+
+    result = @ingestor.convert_params(params)
+
+    refute result.key?(:content_provider_id)
+    refute result.key?(:providers)
+  end
+
   private
 
   def mock_bioschemas(url, filename)
