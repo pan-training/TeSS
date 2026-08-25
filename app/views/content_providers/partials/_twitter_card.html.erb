@@ -11,4 +11,5 @@
   <%= tag(:meta, property: "og:image",        content: asset_url(content_provider.image.url)) %>
   <%= tag(:meta, property: "og:title",        content: content_provider.title) %>
   <%= tag(:meta, property: "og:description",  content: content_provider.description) %>
+  <%= tag(:meta, name: "keywords",            content: content_provider.keywords.join(', ')) if content_provider.keywords.any? %>
 <% end %>

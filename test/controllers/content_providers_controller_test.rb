@@ -173,6 +173,15 @@ class ContentProvidersControllerTest < ActionController::TestCase
     assert assigns(:content_provider)
   end
 
+  test 'should include content provider keywords metadata on show page' do
+    @content_provider.update!(keywords: %w[alpha beta])
+
+    get :show, params: { id: @content_provider }
+
+    assert_response :success
+    assert_select 'meta[name="keywords"][content="alpha, beta"]', count: 1
+  end
+
   test 'should show content provider as json' do
     get :show, params: { id: @content_provider, format: :json }
     assert_response :success
