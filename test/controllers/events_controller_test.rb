@@ -167,6 +167,17 @@ class EventsControllerTest < ActionController::TestCase
     sign_in @event.user
     get :edit, params: { id: @event }
     assert_response :success
+    assert_select 'input#event_locked_fields_title.field-lock[data-autolock="true"]', count: 1
+  end
+
+  test 'event edit can enable automatic field locking just for events' do
+    sign_in @event.user
+
+    with_settings(automatic_field_locking: %w[events]) do
+      get :edit, params: { id: @event }
+      assert_response :success
+      assert_select 'input#event_locked_fields_title.field-lock[data-autolock="true"]', count: 1
+    end
   end
 
   test 'should get edit for admin' do

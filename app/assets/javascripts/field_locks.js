@@ -9,7 +9,7 @@ const FieldLocks = {
                 ? group
                 : group.parents('.form-group').has('input[type=checkbox].field-lock').first();
             const lockCheckbox = lockGroup.find('input[type=checkbox].field-lock').first();
-            if (!lockCheckbox.length) return;
+            if (!lockCheckbox.length || !lockCheckbox.data('autolock')) return;
 
             if (FieldLocks.hasNonEmptyValue(this)) {
                 lockCheckbox.prop('checked', true);

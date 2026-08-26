@@ -52,6 +52,32 @@ class FieldLockTest < ActiveSupport::TestCase
     assert_equal({ title: 'Kept title' }.with_indifferent_access, provider_params[:content_provider])
   end
 
+  test 'automatic field locking config supports all and per-resource values' do
+    with_settings(automatic_field_locking: true) do
+      assert TeSS::Config.automatic_field_locking_enabled_for?(Material)
+      assert TeSS::Config.automatic_field_locking_enabled_for?(Event)
+      assert TeSS::Config.automatic_field_locking_enabled_for?(ContentProvider)
+    end
+
+    with_settings(automatic_field_locking: %w[materials events]) do
+      assert TeSS::Config.automatic_field_locking_enabled_for?(Material)
+      assert TeSS::Config.automatic_field_locking_enabled_for?(Event)
+      refute TeSS::Config.automatic_field_locking_enabled_for?(ContentProvider)
+    end
+
+    with_settings(automatic_field_locking: %w[providers]) do
+      assert TeSS::Config.automatic_field_locking_enabled_for?(ContentProvider)
+      refute TeSS::Config.automatic_field_locking_enabled_for?(Material)
+      refute TeSS::Config.automatic_field_locking_enabled_for?(Event)
+    end
+
+    with_settings(automatic_field_locking: %w[material event content_provider]) do
+      refute TeSS::Config.automatic_field_locking_enabled_for?(Material)
+      refute TeSS::Config.automatic_field_locking_enabled_for?(Event)
+      refute TeSS::Config.automatic_field_locking_enabled_for?(ContentProvider)
+    end
+  end
+
   test 'can add field locks to content provider' do
     provider = content_providers(:provider_with_empty_image_url)
 
