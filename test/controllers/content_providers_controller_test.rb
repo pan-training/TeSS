@@ -223,6 +223,61 @@ class ContentProvidersControllerTest < ActionController::TestCase
     assert_response :forbidden
   end
 
+  test 'can lock fields' do
+    sign_in @content_provider.user
+
+    assert_difference('FieldLock.count', 3) do
+      patch :update,
+            params: { id: @content_provider,
+                      content_provider: { title: 'Updated title', locked_fields: %w[title description image] } }
+    end
+
+    assert_redirected_to content_provider_path(assigns(:content_provider))
+    assert_equal 3, assigns(:content_provider).locked_fields.count
+    assert assigns(:content_provider).field_locked?(:title)
+    assert assigns(:content_provider).field_locked?(:description)
+    assert assigns(:content_provider).field_locked?(:image)
+    refute assigns(:content_provider).field_locked?(:contact)
+  end
+
+  test 'scraper cannot overwrite locked fields' do
+    user = users(:scraper_user)
+    provider = ContentProvider.create!(title: 'Scraper-owned provider',
+                                       url: 'http://scraper-owned-provider.example.org',
+                                       content_provider_type: 'Portal',
+                                       user: user)
+    provider.locked_fields = [:title]
+    provider.save!
+
+    patch :update,
+          params: {
+            user_token: user.authentication_token,
+            user_email: user.email,
+            content_provider: {
+              title: 'new title',
+              url: provider.url,
+              description: 'new description'
+            },
+            id: provider.id,
+            format: 'json'
+          }
+
+    parsed_response = JSON.parse(response.body)
+    assert_equal provider.title, parsed_response['title'], 'Title should not have changed'
+    assert_equal 'new description', parsed_response['description']
+  end
+
+  test 'normal user can overwrite locked fields' do
+    @content_provider.locked_fields = [:title]
+    @content_provider.save!
+
+    sign_in @content_provider.user
+    patch :update, params: { id: @content_provider, content_provider: { title: 'new title' } }
+    assert_redirected_to content_provider_path(assigns(:content_provider))
+
+    assert_equal 'new title', assigns(:content_provider).title
+  end
+
   # DESTROY TEST
   test 'should destroy content provider owned by user' do
     sign_in @content_provider.user

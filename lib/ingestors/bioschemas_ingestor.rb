@@ -167,6 +167,7 @@ module Ingestors
       score
     end
 
+    # This method is reused by the oai_pmh_ingestor
     def convert_params(params)
       params[:description] = convert_description(params[:description]) if params.key?(:description)
       if ingesting_content_provider&.content_provider_type == 'Portal'

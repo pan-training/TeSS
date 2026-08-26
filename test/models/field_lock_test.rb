@@ -38,6 +38,34 @@ class FieldLockTest < ActiveSupport::TestCase
     FieldLock.strip_locked_fields(params[:event], event.locked_fields)
     assert_equal({ description: 'Something else' }.with_indifferent_access, params[:event])
 
+    provider = content_providers(:goblet)
+    provider.locked_fields = [:image]
+
+    provider_params = {
+      content_provider: {
+        image: 'uploaded-file',
+        image_url: 'http://example.com/new-image.png',
+        title: 'Kept title'
+      }
+    }.with_indifferent_access
+    FieldLock.strip_locked_fields(provider_params[:content_provider], provider.locked_fields)
+    assert_equal({ title: 'Kept title' }.with_indifferent_access, provider_params[:content_provider])
+  end
+
+  test 'can add field locks to content provider' do
+    provider = content_providers(:provider_with_empty_image_url)
+
+    assert_empty provider.locked_fields
+    provider.locked_fields = [:title, :image]
+
+    assert_difference('FieldLock.count', 2) do
+      provider.save
+    end
+
+    assert_equal [:image, :title], provider.locked_fields.sort
+    assert provider.field_locked?(:title)
+    assert provider.field_locked?(:image)
+
   end
 
 end

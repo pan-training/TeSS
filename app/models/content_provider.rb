@@ -8,6 +8,7 @@ class ContentProvider < ApplicationRecord
   include Searchable
   include IdentifiersDotOrg
   include HasFriendlyId
+  include LockableFields
   include CurationQueue
 
   has_many :materials, dependent: :destroy
